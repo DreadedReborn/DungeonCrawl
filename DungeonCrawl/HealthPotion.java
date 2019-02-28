@@ -10,6 +10,7 @@ public class HealthPotion extends Item
 {
 
     public int healthRestored; //Variable that defines the amount of health the item regens. Default is 15.
+    public boolean isBeingUsed;
 
     public HealthPotion() {
         healthRestored = 25;
@@ -35,8 +36,10 @@ public class HealthPotion extends Item
                 TestWorld world = (TestWorld)getWorld();
                 if(beingUsed()==true)
                 {
-                    world.changeHealth(healthRestored);
-                    getWorld().removeObject(this);
+                    world.changeHealth(healthRestored, this);
+                    if (isBeingUsed){
+                        getWorld().removeObject(this);
+                    }
                 }
             }
         }

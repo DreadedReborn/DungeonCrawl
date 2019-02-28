@@ -21,6 +21,6 @@ public class SmallHealthPotion extends HealthPotion
     {
          pickUp();
         discard();
-        use(healthRestored);
+        use(healthRestored, this);
     }    
 }

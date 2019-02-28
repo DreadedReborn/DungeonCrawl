@@ -13,6 +13,7 @@ public class Player extends Mob
     private TestWorld gameWorld = (TestWorld) getWorld();
 
     public int Health = 50;
+    public int MaxHealth = 50;
     public int Attack = 1;
     public int Defense = 2;
     public int weaponDefense = 0;

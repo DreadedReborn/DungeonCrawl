@@ -317,10 +317,27 @@ public class TestWorld extends ActiveWorld
      * Changes the health in the health bar. This includes an animation for changing between states. This should be used for calculating damage during the game.
      * @param Health as Integer.
      */
-    public void changeHealth(int Health)
+    public void changeHealth(int Health, HealthPotion healthpotion)
     {
-        healthbar.addScore(Health);
-        getObjects(Player.class).get(0).Health += Health;
+        int x;
+        int y;
+        Player player = (Player)getObjects(Player.class).get(0);
+        if (player.Health != player.MaxHealth){ //Checks if the player has actually taken damage.
+            x = player.Health;
+            y = player.MaxHealth;
+            if (x+y >= player.MaxHealth){ //Checks if the new health value is over the max health.
+                healthbar.setscore(player.MaxHealth);
+                healthpotion.isBeingUsed = true;
+            }
+            else {
+                healthbar.addScore(Health);
+                player.Health += Health;
+                healthpotion.isBeingUsed = true;
+            }
+        }
+        else {
+            healthpotion.isBeingUsed = false;
+        }
     }
 
     /**
