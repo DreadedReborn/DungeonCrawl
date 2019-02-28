@@ -78,6 +78,7 @@ public abstract class Monster extends Mob
             if (dmg - eDefense < 0)
             {
                 eHealth = eHealth;
+                dmg = 0;
             }
             else {
                 eHealth = eHealth - ( dmg - eDefense);
