@@ -1,0 +1,37 @@
+START
+
+Define "input" as (string)
+Define "Rand1" as (integer)
+Check "input"
+
+If "input" is "w" then
+	Move up
+If "input" is "s" then
+	Move down
+If "input" is "a" then
+	Move left
+If "input" is "d" then
+	Move right
+
+If going to collide with "wall.class" or "doorclosed.class" then
+	If going to collide with "wall.class" then
+		Don't move from current spot
+	If going to collide with "doorclosed.class" then
+		Remove "doorclosed.class" and place "dooropened.class"
+
+"enemy" is any object that is subclass of "enemy.class"
+
+If going to collide with "enemy" then
+	Pick random number between 1 and "attack"
+	If "attack" > "enemy"."defense" then
+		Pick random number ((Rand1)) between 1 and "maxdamage"
+		Subtract "Rand1" from "enemy"."health"
+		Display "damaged" effect on "enemy"
+	Else display "blockdamage" effect on "player"
+	If "enemy"."attack" > "defense" then
+		Pick random number ((Rand2)) between 1 and "enemy"."maxdamage"
+		Subtract "Rand2" from "health"
+		Display "damaged" effect on "player"
+	Else display "blockdamage" effect on "enemy"
+End If
+

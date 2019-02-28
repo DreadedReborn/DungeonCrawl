@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Inventory
+comment0.text=\r\n\ Holds\ player\ inventory\ array.\r\n\ \r\n\ @author\ PC\r\n\ @version\ shallowPockets\r\n
+comment1.params=arrayNo
+comment1.target=Item\ getInventoryItem(int)
+numComments=2

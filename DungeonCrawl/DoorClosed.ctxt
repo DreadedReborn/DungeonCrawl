@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=DoorClosed
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DoorClosed\ here.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 1.01\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ animate()
+numComments=3

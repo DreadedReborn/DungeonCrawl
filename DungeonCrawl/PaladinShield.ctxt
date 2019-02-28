@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PaladinShield
+comment0.text=\r\n\ Artifact-tier\ shield,\ provides\ 14\ defense.\ Does\ not\ curse\ player.\r\n\ Created\ as\ a\ result\ of\ feedback\ from\ a\ player.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ PaladinShield\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2

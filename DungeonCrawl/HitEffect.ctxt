@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=HitEffect
+comment0.text=\r\n\ Spawns\ when\ a\ mob\ takes\ damage.\ Displays\ the\ damage\ dealt\ on\ itself,\ and\ then\ deletes\ itself\ after\ a\ certain\ time\ threshold.\r\n\ \r\n\ @author\ PC\r\n\ @version\ minute\ to\ winit\r\n
+comment1.params=dealtdamage
+comment1.target=HitEffect(java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ HitEffect\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ displayDamage()
+comment3.text=\r\n\ Displays\ the\ damage\ dealt\ on\ the\ actor\ itself.\r\n
+comment4.params=
+comment4.target=void\ selfDestruct()
+comment4.text=\r\n\ Removes\ the\ actor\ after\ a\ certain\ time\ limit,\ or\ other\ factors.\r\n
+numComments=5

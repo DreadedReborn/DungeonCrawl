@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Equipment
+comment0.text=\r\n\ Superclass\ for\ all\ items\ that\ are\ equippable,\ i.e.\ armor,\ etc.\r\n\ \r\n\ @author\ PC\r\n\ @version\ swords\ and\ blades\r\n
+comment1.params=isWeapon
+comment1.target=void\ pickUpEquipment(int)
+comment1.text=\r\n\ Allows\ the\ object\ to\ be\ picked\ up\ and\ stored.\r\n\ Differs\ to\ Item.pickUp\ in\ that\ it\ stores\ only\ in\ two\ slots,\ not\ the\ inventory.\r\n\ @param\ Boolean,\ provided\ by\ subclass.\r\n
+comment2.params=Attack\ Defense\ oldAttack\ oldDefense\ isWeapon\ isArtifact
+comment2.target=void\ updateStats(int,\ int,\ int,\ int,\ int,\ boolean)
+comment2.text=\r\n\ Allows\ the\ object\ to\ update\ the\ player\ stats\ when\ equipped.\r\n\ Only\ applies\ to\ "equipped"\ (getY\ \=\ 10)\ equipment.\r\n\ \r\n\ @param\ Integer,\ for\ Attack\ stat\ increase.\r\n\ @param\ Integer,\ for\ Defense\ stat\ increase.\r\n\ @param\ Boolean,\ for\ checking\ if\ the\ equipment\ is\ a\ weapon\ or\ an\ armor\ (true\ or\ false)\r\n\ @param\ Boolean,\ for\ checking\ if\ the\ equipment\ is\ an\ artifact.\r\n\ Parameters\ can\ also\ be\ negatives\ to\ remove\ stat\ points.\r\n
+comment3.params=
+comment3.target=int\ findOldAttack()
+comment4.params=
+comment4.target=int\ findOldDefense()
+comment5.params=
+comment5.target=int\ findOldItemDefense()
+numComments=6

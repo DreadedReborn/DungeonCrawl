@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=HealthPotion
+comment0.text=\r\n\ Health\ Potion\ -\ Item/healing\ -\ Provides\ 25hp\ on\ use.\ Goes\ on\ hotbar.\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ 0.5\r\n
+comment1.params=
+comment1.target=HealthPotion()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ \r\n
+comment3.params=healthRestored
+comment3.target=void\ use(int)
+comment3.text=\r\n\ Allows\ the\ item\ to\ be\ used.\r\n
+numComments=4

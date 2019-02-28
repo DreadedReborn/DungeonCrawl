@@ -1,0 +1,84 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * The Player class represents the player's character in the world.
+ * It is the primary method in which the player interacts with the world.
+ * 
+ * @author Jordan Lawrence 
+ * @version 1.2
+ */
+public class Player extends Mob
+{
+    private int Health = 5;
+    private int Attack = 2;
+
+    /**
+     * Act - do whatever the Player wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     * In theory and practice, it is an event loop.
+     */
+    public void act() 
+    {
+        movement();
+        openDoor();
+    }     
+
+    /**
+     * Handle keyboard input.
+     * Events are : Pressing the up arrow key, left arrow key, down arrow key or right arrow key.
+     */
+
+    public void movement()
+    {
+        int d = 1;
+        String key = Greenfoot.getKey();
+
+        Actor leftCollide = getOneObjectAtOffset(-1, 0, Wall.class);
+        Actor rightCollide = getOneObjectAtOffset(1, 0, Wall.class);
+        Actor upCollide = getOneObjectAtOffset(0, -1, Wall.class);
+        Actor downCollide = getOneObjectAtOffset(0, 1, Wall.class);
+        Actor collideOnce = getOneIntersectingObject(Gold.class);
+        Actor counter = new Counter();
+        if (leftCollide==null){ //trigger function
+            if ("left".equals(key)) {//another trigger function
+                setLocation(getX() - d, getY()); //event handler
+            } 
+        }
+        if (downCollide==null){
+            if ("down".equals(key)) {
+                setLocation(getX(),getY() + d);
+            }        
+        }
+        if (rightCollide==null){
+            if("right".equals(key)) {
+                setLocation(getX() + d,getY());
+            } 
+        }
+        if (upCollide==null){
+            if("up".equals(key)) {
+                setLocation(getX(),getY() - d);
+            }
+        }
+        if (collideOnce != null){
+            MyWorld().goldcounter.addGold();
+            getWorld().removeObject(collideOnce);
+        }
+    }
+
+    /**
+     * Opens doors on the same tile as player.
+     */
+    public void openDoor()
+    {
+        Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
+
+        DoorOpened door2 = new DoorOpened();
+        if (door != null)
+        {
+            getWorld().removeObject(door);
+            getWorld().addObject(door2, getX(), getY());
+        }
+    }
+
+}
+

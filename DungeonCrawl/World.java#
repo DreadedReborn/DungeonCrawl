@@ -1,0 +1,127 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class MyWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class World extends ActiveWorld
+{
+    private Counter goldcounter;
+    /**
+     * Constructor for objects of class MyWorld.
+     * 
+     */
+    public World1()
+    {    
+        // Create a new world with 10x10 cells with a cell size of 50x50 pixels.
+        super(10, 10, 50); 
+        prepare();
+        setPaintOrder(Player.class, Counter.class);
+        goldcounter = new Counter("Gold: ");
+        addObject(goldcounter, 5, 9);
+    }
+
+    public Counter getCounter()
+    {
+        return goldcounter;
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+
+        Wall wall = new Wall();
+        addObject(wall,5,7);
+        Wall wall2 = new Wall();
+        addObject(wall2,4,8);
+        Wall wall3 = new Wall();
+        addObject(wall3,5,8);
+        Wall wall4 = new Wall();
+        addObject(wall4,1,2);
+        Wall wall5 = new Wall();
+        addObject(wall5,1,3);
+        Wall wall6 = new Wall();
+        addObject(wall6,1,4);
+        Wall wall7 = new Wall();
+        addObject(wall7,1,5);
+        Wall wall8 = new Wall();
+        addObject(wall8,3,2);
+        Wall wall9 = new Wall();
+        addObject(wall9,4,2);
+        Wall wall10 = new Wall();
+        addObject(wall10,3,4);
+        Wall wall11 = new Wall();
+        addObject(wall11,8,9);
+        Wall wall12 = new Wall();
+        addObject(wall12,8,8);
+        Wall wall13 = new Wall();
+        addObject(wall13,9,1);
+        Wall wall14 = new Wall();
+        addObject(wall14,0,0);
+        Player player = new Player();
+        addObject(player,5,4);
+        Gold gold = new Gold();
+        addObject(gold,7,7);
+        gold.setLocation(7,9);
+        wall4.setLocation(1,6);
+        Wall wall15 = new Wall();
+        addObject(wall15,1,2);
+        DoorClosed doorclosed = new DoorClosed();
+        addObject(doorclosed,8,1);
+        DoorClosed doorclosed2 = new DoorClosed();
+        addObject(doorclosed2,7,1);
+        DoorClosed doorclosed3 = new DoorClosed();
+        addObject(doorclosed3,2,2);
+        DoorClosed doorclosed4 = new DoorClosed();
+        addObject(doorclosed4,0,4);
+        DoorClosed doorclosed5 = new DoorClosed();
+        addObject(doorclosed5,2,4);
+        DoorClosed doorclosed6 = new DoorClosed();
+        addObject(doorclosed6,5,9);
+        DoorClosed doorclosed7 = new DoorClosed();
+        addObject(doorclosed7,8,7);
+        DoorOpened dooropened = new DoorOpened();
+        addObject(dooropened,5,2);
+        DoorOpened dooropened2 = new DoorOpened();
+        addObject(dooropened2,3,5);
+        DoorOpened dooropened3 = new DoorOpened();
+        addObject(dooropened3,7,4);
+        removeObject(player);
+        Player player2 = new Player();
+        addObject(player2,5,4);
+        Wall wall16 = new Wall();
+        addObject(wall16,2,7);
+        DoorClosed doorclosed8 = new DoorClosed();
+        addObject(doorclosed8,3,7);
+        Wall wall17 = new Wall();
+        addObject(wall17,1,7);
+        wall2.setLocation(4,7);
+        Wall wall18 = new Wall();
+        addObject(wall18,1,8);
+        removeObject(dooropened2);
+        Wall wall19 = new Wall();
+        addObject(wall19,4,4);
+        Wall wall20 = new Wall();
+        addObject(wall20,4,5);
+        Wall wall21 = new Wall();
+        addObject(wall21,4,6);
+        Wall wall22 = new Wall();
+        addObject(wall22,8,4);
+        Wall wall23 = new Wall();
+        addObject(wall23,9,4);
+        Wall wall24 = new Wall();
+        addObject(wall24,6,1);
+        Wall wall25 = new Wall();
+        addObject(wall25,6,2);
+        removeObject(doorclosed3);
+        Wall wall26 = new Wall();
+        addObject(wall26,7,6);
+        Wall wall27 = new Wall();
+        addObject(wall27,8,5);
+    }
+}

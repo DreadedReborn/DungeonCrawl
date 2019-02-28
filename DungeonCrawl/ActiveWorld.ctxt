@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ActiveWorld
+comment0.text=\r\n\ Holds\ the\ methods\ that\ all\ World\ subclasses\ may\ need\ and\ use.\r\n\ \r\n\ @author\ PC\r\n\ @version\ scream\r\n
+comment1.params=width\ height\ cellsize
+comment1.target=ActiveWorld(int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ActiveWorld.\r\n\ \r\n
+comment2.params=
+comment2.target=Counter\ returnCounter()
+comment3.params=
+comment3.target=void\ newFloor()
+comment4.params=
+comment4.target=greenfoot.Actor\ getskeleton()
+numComments=5

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BronzeChest
+comment0.text=\r\n\ Tier-2\ chest.\r\n\ \r\n\ @author\ PC\r\n\ @version\ polished\ and\ refined\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ BronzeChest\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ generateBronzeLoot()
+comment2.text=\r\n\ Generates\ a\ random\ item\ and\ self-destructs\ the\ object\ when\ called.\r\n\r\n
+numComments=3

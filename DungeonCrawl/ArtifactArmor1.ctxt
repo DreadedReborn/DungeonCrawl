@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ArtifactArmor1
+comment0.text=\r\n\ What\ was\ once\ an\ attempt\ at\ Paladin\ armor,\ it\ is\ now\ a\ diving\ suit.\r\n\ Provides\ extreme\ defense\ at\ the\ cost\ of\ current\ weapon.\r\n\ \r\n\ @author\ PC\r\n\ @version\ deep\ sea\ paladins\r\n
+comment1.params=
+comment1.target=ArtifactArmor1()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ ArtifactArmor1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

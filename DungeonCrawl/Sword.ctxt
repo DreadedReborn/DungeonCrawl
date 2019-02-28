@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Sword
+comment0.text=\r\n\ A\ basic,\ tier\ one\ sword.\ Gives\ +4\ attack\ and\ +0\ defense.\r\n\ \r\n\ @author\ PC\r\n\ @version\ smithing\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Sword\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2

@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Skeleton
+comment0.text=\r\n\ Skeleton\ is\ the\ first\ developed\ enemy\ of\ the\ game,\ and\ will\ be\ one\ of\ the\ first\ the\ player\ encounters.\r\n\ It\ is\ an\ easy\ enemy\ to\ beat.\r\n\ \r\n\ This\ class\ utilises\ Inheritance\ and\ Polymorphism\ for\ most,\ if\ not\ all,\ of\ it's\ methods.\r\n\ Inheritance\ is\ where\ one\ class\ "inherits"\ (obtains\ the\ ability\ to\ use)\ a\ method,\ or\ set\ of\ methods,\ from\ a\ "parent"\ class.\r\n\ This\ saves\ the\ developer\ time\ as\ they\ do\ not\ need\ to\ re-write\ the\ method\ that\ is\ being\ inherited.\r\n\ \r\n\ Polymorphism\ is\ where\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ 1.1\r\n
+comment1.params=
+comment1.target=Skeleton()
+comment1.text=\r\n\ If\ a\ skeleton\ is\ spawned\ without\ any\ parameters,\ it\ will\ default\ to\ these\ stats.\ Should\ not\ be\ called\ in\ normal\ gameplay.\r\n
+comment2.params=health\ attack\ defense
+comment2.target=Skeleton(int,\ int,\ int)
+comment2.text=\r\n\ Used\ to\ create\ a\ second\ player\ for\ the\ game.\ Acts\ like\ a\ player\ for\ all\ intents\ and\ purposes.\r\n\ Shares\ stats\ and\ health\ with\ player\ one\ due\ to\ limitations.\r\n\ This\ constructor\ exists\ to\ provide\ an\ example\ of\ Polymorphism.\r\n\ Polymorphism\ is\ where\ an\ object\ can\ take\ multiple\ forms,\ the\ most\ common\ example\ being\ that\ it\ is\ a\ "child"\ of\ a\ "parent"\ class.\r\n\ \r\n\ The\ players\ are\ given\ bonus\ health\ as\ compensation.\r\n
+comment3.params=
+comment3.target=boolean\ getTurnActive()
+comment4.params=turnActive
+comment4.target=void\ setTurnActive(boolean)
+comment5.params=
+comment5.target=void\ act()
+comment6.params=
+comment6.target=void\ ActOnTurn()
+comment6.text=\r\n\ \r\n\ ActOnTurn\ -An\ adjustment\ of\ the\ Act\ method,\ this\ method\ is\ only\ called\ when\ the\ player\ engages\ a\ turn\ by\ any\ means.\r\n\ This\ will\ normally\ be\ called\ by\ a\ method\ in\ a\ world\ class.\r\n
+comment7.params=
+comment7.target=void\ sortSprites()
+comment7.text=\r\n\ Sorts\ the\ skeleton's\ sprites\ based\ on\ it's\ stats\ using\ selection\ to\ determine\ the\ image.\r\n
+comment8.params=
+comment8.target=void\ resetSprites()
+comment8.text=\r\n\ Debug\ command.\r\n\ Sets\ 'spritesSet'\ boolean\ to\ false.\r\n
+comment9.params=
+comment9.target=void\ spook()
+numComments=10

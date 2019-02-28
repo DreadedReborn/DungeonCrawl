@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Hotbar
+comment0.text=\r\n\ Hotbar\ interface\ for\ the\ player\ character\ to\ use\ during\ the\ game.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 0.01\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Hotbar\ act\ method.\r\n\r\n
+comment2.params=
+comment2.target=void\ displayItems()
+comment2.text=\r\n\ Makes\ sure\ the\ items\ are\ visible\ in\ the\ hotbar\ while\ the\ player\ has\ them.\r\n
+numComments=3

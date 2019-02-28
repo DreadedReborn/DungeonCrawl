@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\r\n\ Superclass\ of\ interactable,\ inanimate\ Items.\r\n\ This\ includes\ items\ such\ as\ Gold,\ a\ collectible,\ and\ Apple,\ a\ healing\ item.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 0.9\r\n
+comment1.params=
+comment1.target=void\ pickUp()
+comment1.text=\r\n\ Allows\ the\ object\ to\ be\ picked\ up\ and\ stored.\r\n\ @param\ Integer,\ provided\ by\ item\ subclass.\r\n
+comment2.params=
+comment2.target=boolean\ beingUsed()
+comment2.text=\r\n\ Checks\ whether\ or\ not\ an\ item\ is\ being\ used\ in\ an\ inventory.\r\n
+comment3.params=
+comment3.target=boolean\ beingDiscarded()
+comment3.text=\r\n\ Checks\ whether\ or\ not\ an\ item\ is\ being\ discarded\ in\ an\ inventory.\r\n
+comment4.params=
+comment4.target=void\ discard()
+comment4.text=\r\n\ Allows\ the\ item\ to\ be\ thrown\ away/deleted/removed/etc.\r\n\ For\ all\ intents\ and\ purposes,\ deletes\ the\ item.\r\n
+numComments=5

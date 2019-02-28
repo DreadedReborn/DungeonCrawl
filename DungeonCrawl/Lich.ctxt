@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Lich
+comment0.text=\r\n\ The\ final\ boss\ of\ the\ game.\ Capable\ of\ spawning\ instances\ of\ 'Skeleton.class',\ and\ has\ the\ highest\ health,\ attack\ and\ defense\ of\ any\ current\ monster.\r\n\ \r\n\ @author\ PC\r\n\ @version\ almost\ fixed\r\n
+comment1.params=
+comment1.target=Lich()
+comment2.params=
+comment2.target=boolean\ getTurnActive()
+comment3.params=turnActive
+comment3.target=void\ setTurnActive(boolean)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=void\ ActOnTurn()
+comment5.text=\r\n\ \r\n\ ActOnTurn\ -An\ adjustment\ of\ the\ Act\ method,\ this\ method\ is\ only\ called\ when\ the\ player\ engages\ a\ turn\ by\ any\ means.\r\n\ This\ will\ normally\ be\ called\ by\ a\ method\ in\ a\ world\ class.\r\n
+comment6.params=
+comment6.target=void\ summonSkeletons()
+comment6.text=\r\n\ Allows\ the\ Lich\ to\ summon\ Skeletons\ periodically.\r\n
+comment7.params=
+comment7.target=int\ getBossHealth()
+comment7.text=\r\n\ Returns\ the\ boss's\ health\ as\ an\ integer.\r\n\ @return\ bossHealth,\ as\ integer.\r\n
+comment8.params=
+comment8.target=int\ getBossDefense()
+comment8.text=\r\n\ Returns\ the\ boss's\ deefense,\ as\ an\ integer.\r\n\ @return\ bossDefense,\ as\ integer.\r\n
+comment9.params=newHealth
+comment9.target=void\ setBossHealth(int)
+comment9.text=\r\n\ Sets\ the\ boss's\ health.\r\n\ Will\ be\ used\ by\ damage\ calculating\ methods\ in\ normal\ play.\r\n\ @param\ newHealth,\ as\ integer.\r\n
+numComments=10
