@@ -3,13 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Artifact Weapon - Paladin Sword - 20 attack. Does not curse the owner.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author PC
+ * @version rework
  */
 public class PaladinSword extends Weapon
 {
     public int isWeapon = 0;
-    public int attack = 10;
+    public int attack = 20;
     public int defense = 0;
     private GifImage gifimage;
     

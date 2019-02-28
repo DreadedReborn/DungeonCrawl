@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Tier-1 Weapon. Provides 2 attack and 0 defense.
+ * Tier-1 Weapon. Provides 4 attack and 0 defense.
  * 
  * @author PC 
- * @version Blunt
+ * @version rework
  */
 public class Knife extends Weapon
 {
     public int isWeapon = 0;
-    public int attack = 2;
+    public int attack = 4;
     public int defense = 0;
     /**
      * Act - do whatever the Knife wants to do. This method is called whenever

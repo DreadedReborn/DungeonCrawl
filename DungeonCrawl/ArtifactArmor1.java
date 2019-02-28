@@ -5,13 +5,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Provides extreme defense at the cost of current weapon.
  * 
  * @author PC
- * @version deep sea paladins
+ * @version rework
  */
 public class ArtifactArmor1 extends Armor
 {
     public int isWeapon = 1;
     public int attack = 0;
-    public int defense = 15;
+    public int defense = 18;
     public ArtifactArmor1()
     {
         isArtifact = true;
