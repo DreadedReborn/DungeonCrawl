@@ -23,20 +23,20 @@ public class HealthPotion extends Item
     {
         pickUp();
         discard();
-        use(healthRestored);
+        use(healthRestored, this);
     }    
 
     /**
      * Allows the item to be used.
      */
-    public void use(int healthRestored)
+    public void use(int healthRestored, HealthPotion healthpotion)
     {
         if(getWorld() != null){
             if (getWorld() instanceof TestWorld){
                 TestWorld world = (TestWorld)getWorld();
                 if(beingUsed()==true)
                 {
-                    world.changeHealth(healthRestored, this);
+                    world.changeHealth(healthRestored, healthpotion);
                     if (isBeingUsed){
                         getWorld().removeObject(this);
                     }

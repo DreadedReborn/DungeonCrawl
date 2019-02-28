@@ -107,6 +107,7 @@ public class Player extends Mob
         }
         changeAnimation();
         setImage(gifImage.getCurrentImage());
+        checkWin();
     }
 
     /**
@@ -422,6 +423,23 @@ public class Player extends Mob
             else if (wornweapon instanceof GreatAxe)
             {
                 gifImage = new GifImage("man01greataxe.gif");
+            }
+        }
+    }
+
+    /**
+     * Checks if the level is the final boss level. If so, checks if the Lich is dead.
+     * Once both conditions are fulfilled, enter the Win screen.
+     */
+    private void checkWin()
+    {
+        TestWorld world = (TestWorld)getWorld();
+        if (world.bossLevel)
+        {
+            if (world.getObjects(Lich.class).size() == 0)
+            {
+                World gameOver = new EndWorld();
+                Greenfoot.setWorld(gameOver);
             }
         }
     }
