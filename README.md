@@ -1,1 +1,2 @@
-# DungeonCrawl
+# Dungeon Crawl
+# A Greenfoot-coded game.
