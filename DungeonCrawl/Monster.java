@@ -60,7 +60,7 @@ public abstract class Monster extends Mob
                 health = health - ( dmg - defense);
             }
             getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
-            
+
             if (health <= 0)
             {
 
@@ -112,8 +112,13 @@ public abstract class Monster extends Mob
         Actor rightCollide = getOneObjectAtOffset(1, 0, Wall.class);
         Actor upCollide = getOneObjectAtOffset(0, -1, Wall.class);
         Actor downCollide = getOneObjectAtOffset(0, 1, Wall.class);
+        /*
+        Actor leftupCollide = getOneObjectAtOffset(-1, 1, Wall.class);
+        Actor rightupCollide = getOneObjectAtOffset(1, 1, Wall.class);
+        Actor leftdownCollide = getOneObjectAtOffset(-1, -1, Wall.class);
+        Actor rightdownCollide = getOneObjectAtOffset(1, -1, Wall.class);
+         */
         Actor hotbar = getOneObjectAtOffset(0, 1, EmptyHotbar.class);
-
         Player leftEnemy = (Player)getOneObjectAtOffset(-1, 0, Player.class);
         Player rightEnemy = (Player)getOneObjectAtOffset(1, 0, Player.class);
         Player upEnemy = (Player)getOneObjectAtOffset(0, -1, Player.class);
@@ -124,69 +129,82 @@ public abstract class Monster extends Mob
         Chest upChest = (Chest)getOneObjectAtOffset(0, -1, Chest.class);
         Chest downChest = (Chest)getOneObjectAtOffset(0, 1, Chest.class);
 
-        if (leftCollide==null){ //trigger function
-            if (leftEnemy==null){
-                if (leftChest == null) {
-                    if (Greenfoot.getRandomNumber(100)<40) {//another trigger function
-                        {
-                            setLocation(getX() - d, getY()); //event handler
+        boolean HasMovedAlready = false;
 
-                        }
-                    } 
-                } 
-            }
-            else if (leftEnemy!=null){
-                if (Greenfoot.getRandomNumber(100)<90)
-                {
-                    leftEnemy.takeDamage(attack, leftEnemy);
-
-                }
-            }
-        } 
-
-        if (downCollide==null){
-            if (hotbar==null){
-                if (downEnemy==null){
-                    if (downChest == null){
-                        if (Greenfoot.getRandomNumber(100)<40) {
-                            setLocation(getX(),getY() + d);
+        if (!HasMovedAlready){
+            if (leftCollide==null){ //trigger function
+                if (leftEnemy==null){
+                    if (leftChest == null) {
+                        if (Greenfoot.getRandomNumber(100)<40) {//another trigger function
+                            {
+                                setLocation(getX() - d, getY()); //event handler
+                                HasMovedAlready = true;
+                            }
                         } 
                     } 
                 }
-                else if (downEnemy!=null){
+                else if (leftEnemy!=null){
+                    if (Greenfoot.getRandomNumber(100)<90)
+                    {
+                        leftEnemy.takeDamage(attack, leftEnemy);
+                        HasMovedAlready = true;
+                    }
+                }
+            } 
+        }
+        if (!HasMovedAlready){
+            if (rightCollide==null){
+                if (rightEnemy==null){
+                    if (rightChest==null){
+                        if(Greenfoot.getRandomNumber(100)<40) {
+                            setLocation(getX() + d,getY());
+                            HasMovedAlready = true;
+                        } 
+                    }
+                }
+                else if (rightEnemy!=null){
                     if (Greenfoot.getRandomNumber(100)<90){
-                        downEnemy.takeDamage(attack, downEnemy);
+                        rightEnemy.takeDamage(attack, rightEnemy);
+                        HasMovedAlready = true;
                     }
                 }
             }
         }
-
-        if (rightCollide==null){
-            if (rightEnemy==null){
-                if (rightChest==null){
-                    if(Greenfoot.getRandomNumber(100)<40) {
-                        setLocation(getX() + d,getY());
-                    } 
-                }
-            }
-            else if (rightEnemy!=null){
-                if (Greenfoot.getRandomNumber(100)<90){
-                    rightEnemy.takeDamage(attack, rightEnemy);
-                }
-            }
-        }
-
-        if (upCollide==null){
-            if (upEnemy==null){
-                if (upChest==null){
-                    if(Greenfoot.getRandomNumber(100)<40) {
-                        setLocation(getX(),getY() - d);
+        if (!HasMovedAlready){
+            if (downCollide==null){
+                if (hotbar==null){
+                    if (downEnemy==null){
+                        if (downChest == null){
+                            if (Greenfoot.getRandomNumber(100)<40) {
+                                setLocation(getX(),getY() + d);
+                                HasMovedAlready = true;
+                            } 
+                        } 
+                    }
+                    else if (downEnemy!=null){
+                        if (Greenfoot.getRandomNumber(100)<90){
+                            downEnemy.takeDamage(attack, downEnemy);
+                            HasMovedAlready = true;
+                        }
                     }
                 }
-            }
-            else if (upEnemy!=null){
-                if (Greenfoot.getRandomNumber(100)<90){
-                    upEnemy.takeDamage(attack, upEnemy);
+            }   
+        }
+        if (!HasMovedAlready){
+            if (upCollide==null){
+                if (upEnemy==null){
+                    if (upChest==null){
+                        if(Greenfoot.getRandomNumber(100)<40) {
+                            setLocation(getX(),getY() - d);
+                            HasMovedAlready = true;
+                        }
+                    }
+                }
+                else if (upEnemy!=null){
+                    if (Greenfoot.getRandomNumber(100)<90){
+                        upEnemy.takeDamage(attack, upEnemy);
+                        HasMovedAlready = true;
+                    }
                 }
             }
         }
