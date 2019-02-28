@@ -325,7 +325,7 @@ public class TestWorld extends ActiveWorld
         if (player.Health != player.MaxHealth){ //Checks if the player has actually taken damage.
             x = player.Health;
             y = player.MaxHealth;
-            if (x+y >= player.MaxHealth){ //Checks if the new health value is over the max health.
+            if ((x+=Health) >= y){ //Checks if the new health value is over the max health.
                 healthbar.setscore(player.MaxHealth);
                 healthpotion.isBeingUsed = true;
             }
