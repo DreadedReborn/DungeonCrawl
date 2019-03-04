@@ -21,11 +21,17 @@ public abstract class Item extends Obj
         Actor player = getOneIntersectingObject(Player.class);
         if(player!=null)
         {
-            // player = ((Player)getWorld().getObjects(Player.class).get(0));
-            // player.inv2.inventory1[array] = this;
-            // inventory1[array] = this;(item)
+            // Player player = ((Player)getWorld().getObjects(Player.class).get(0));
+            // player.invholder = (Item)this;
+            ((Player)getWorld().getObjects(Player.class).get(0)).logToInventory(this, array);
+            // player.inv[array] = (Item)this;
             // ((Player)getWorld().getObjects(Player.class).get(0)).inv[array] = (Item)this;
             setLocation(array, 10);
+            Item olditem = (Item)getOneIntersectingObject(Item.class);
+            if (olditem != null)
+            {
+                getWorld().removeObject(olditem);
+            }
             array++;
         }
         if(array>=6)
