@@ -188,6 +188,10 @@ public class TestWorld extends ActiveWorld
         {
             addObject(new Chest(), wallX[x], wallY[y]);
         }
+        else if (Greenfoot.getRandomNumber(500)<10)
+        {
+            addObject(new BronzeChest(), wallX[x], wallY[y]);
+        }
         else if (Greenfoot.getRandomNumber(10000)<20)
         {
             addObject(new ArtifactChest(), wallX[x], wallY[y]);
@@ -210,27 +214,30 @@ public class TestWorld extends ActiveWorld
         {
             addObject(new Skeleton(Greenfoot.getRandomNumber(10) + progressiveDifficulty,Greenfoot.getRandomNumber(3) + progressiveDifficulty,Greenfoot.getRandomNumber(3) + progressiveDifficulty), wallX[x], wallY[y]);
         }
-        else if (Greenfoot.getRandomNumber(100)<15)
-        {
-            addObject(new HealthPotion(), wallX[x], wallY[y]);
-        }
         else if (Greenfoot.getRandomNumber(100)<10)
         {
             addObject(new BronzeChest(), wallX[x], wallY[y]);
         }
+        /*
+        else if (Greenfoot.getRandomNumber(100)<15)
+        {
+            addObject(new HealthPotion(), wallX[x], wallY[y]);
+        }
+        
         else if (Greenfoot.getRandomNumber(100)<20)
         {
             addObject(new SmallHealthPotion(), wallX[x], wallY[y]);
         }
+        */
         else if (Greenfoot.getRandomNumber(10000)<80)
         {
             addObject(new ArtifactChest(), wallX[x], wallY[y]);
         }
-        else if (Greenfoot.getRandomNumber(500)<80)
+        else if (Greenfoot.getRandomNumber(1500)<80)
         {
             addObject(new PaladinChest(), wallX[x], wallY[y]);
         } 
-        else if (Greenfoot.getRandomNumber(300)<80)
+        else if (Greenfoot.getRandomNumber(500)<80)
         {
             addObject(new SteelChest(), wallX[x], wallY[y]);
         }
