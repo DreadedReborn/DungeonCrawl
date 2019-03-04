@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author PC
  * @version goodie bag
  */
-public class Chest extends Item
+public class Chest extends Obj
 {
     public boolean isOpen = false;
     /**
