@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PaladinSword
-comment0.text=\r\n\ Artifact\ Weapon\ -\ Paladin\ Sword\ -\ 20\ attack.\ Does\ not\ curse\ the\ owner.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Artifact\ Weapon\ -\ Paladin\ Sword\ -\ 20\ attack.\ Does\ not\ curse\ the\ owner.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework\r\n
 comment1.params=
 comment1.target=PaladinSword()
 comment2.params=

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PaladinArmor
-comment0.text=\r\n\ Artifact\ Armor\ -\ Paladin\ Armor.\ Provides\ 20\ defense,\ planned\ bonus\ against\ Undead\ enemies.\r\n\ \r\n\ @author\ PC\r\n\ @version\ fake\ paladin\r\n
+comment0.text=\r\n\ Artifact\ Armor\ -\ Paladin\ Armor.\ Provides\ 20\ defense,\ planned\ bonus\ against\ Undead\ enemies.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ PaladinArmor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

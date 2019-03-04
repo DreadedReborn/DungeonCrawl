@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GreatAxe
-comment0.text=\r\n\ Tier-3\ Weapon.\ Provides\ 6\ attack,\ but\ removes\ 1\ defense.\r\n\ Defense\ down\ has\ been\ temporarily\ removed.\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ HeavyWeapon\r\n
+comment0.text=\r\n\ Tier-3\ Weapon.\ Provides\ 10\ attack,\ but\ removes\ 1\ defense.\r\n\ Defense\ down\ has\ been\ temporarily\ removed.\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ rework\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ GreatAxe\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

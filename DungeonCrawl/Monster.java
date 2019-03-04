@@ -48,8 +48,9 @@ public abstract class Monster extends Mob
      */
     public void takeDamage(int dmg, greenfoot.Actor enemy)
     {
-        if (isBoss){ //If the monster is a boss enemy
-            Lich lich = getWorld().getObjects(Lich.class).get(0);
+        Lich lich = getWorld().getObjects(Lich.class).get(0);
+        if (lich.isBoss){ //If the monster is a boss enemy
+            
             health = lich.getBossHealth();
             defense = lich.getBossDefense();
             if (dmg - defense < 0)
