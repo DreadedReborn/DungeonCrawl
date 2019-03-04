@@ -145,9 +145,6 @@ public class TestWorld extends ActiveWorld
                 addObject(new Stairs(), 8, 8);
             }
         }
-        
-        //debug
-        addObject(new Stairs(), 5, 5);
     }
 
     /**

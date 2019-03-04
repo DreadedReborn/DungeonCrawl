@@ -48,35 +48,31 @@ public abstract class Monster extends Mob
      */
     public void takeDamage(int dmg, greenfoot.Actor enemy)
     {
-        if (getWorld().getObjects(Lich.class).size() != 0)
-        {
-            Lich lich = getWorld().getObjects(Lich.class).get(0);
+        Lich lich = getWorld().getObjects(Lich.class).get(0);
+        if (lich.isBoss){ //If the monster is a boss enemy
+            
+            health = lich.getBossHealth();
+            defense = lich.getBossDefense();
+            if (dmg - defense < 0)
+            {
+                health = health;
+            }
+            else {
+                health = health - ( dmg - defense);
+            }
+            getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
 
-            if (lich.isBoss){ //If the monster is a boss enemy
+            if (health <= 0)
+            {
 
-                health = lich.getBossHealth();
-                defense = lich.getBossDefense();
-                if (dmg - defense < 0)
+                if (Greenfoot.getRandomNumber(100)>=60)
                 {
-                    health = health;
+                    getWorld().addObject(new Gold(), getX(), getY());
                 }
-                else {
-                    health = health - ( dmg - defense);
-                }
-                getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
-
-                if (health <= 0)
-                {
-
-                    if (Greenfoot.getRandomNumber(100)>=60)
-                    {
-                        getWorld().addObject(new Gold(), getX(), getY());
-                    }
-                    getWorld().removeObject(this);
-                }
-                else {
-                    lich.setBossHealth(health);
-                }
+                getWorld().removeObject(this);
+            }
+            else {
+                lich.setBossHealth(health);
             }
         }
         else {
