@@ -27,6 +27,11 @@ public abstract class Item extends Obj
             // player.inv[array] = (Item)this;
             // ((Player)getWorld().getObjects(Player.class).get(0)).inv[array] = (Item)this;
             setLocation(array, 10);
+            Item olditem = (Item)getOneIntersectingObject(Item.class);
+            if (olditem != null)
+            {
+                getWorld().removeObject(olditem);
+            }
             array++;
         }
         if(array>=6)

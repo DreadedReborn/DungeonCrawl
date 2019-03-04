@@ -28,10 +28,22 @@ public class Player extends Mob
     public Weapon wornweapon;
     public Shield wornshield;
 
-    public Item[] inv;
+    // public Item[] inv;
+    //====================================================================================================
 
+    /*
+     * Temporary, really gross, should fix with array.
+     */
+    public Item inv1;
+    public Item inv2;
+    public Item inv3;
+    public Item inv4;
+    public Item inv5;
+    public Item inv6;
+
+    //====================================================================================================
     public Item invholder;
-    public Inventory inv2;
+    // public Inventory inv2;
 
     public boolean isCursed = false;
     private boolean loadHealth = true;
@@ -49,7 +61,7 @@ public class Player extends Mob
     private void Player()
     {
         //inv = new Item[6];
-        inv2 = new Inventory();
+        // inv2 = new Inventory();
     }
 
     private void addedToWorld()
@@ -291,15 +303,42 @@ public class Player extends Mob
      */
     public void logToInventory(Item inventory, int itemNo)
     {
-        if (inv != null){
-            if (inv.length > -1){
-                if (inv[itemNo] != null)
-                {
-                    inv[itemNo] = new Item[itemNo](inventory);
-                    // inv[itemNo] = inventory;
-                }
-            }
+        // if (inv != null){
+        // if (inv.length > -1){
+        // if (inv[itemNo] != null)
+        // {
+        // // inv[itemNo] = new Item[itemNo](inventory);
+        // // inv[itemNo] = inventory;
+        // }
+        // }
+        // }
+        //==========================
+        //gross code below
+        if (itemNo == 0)
+        {
+            inv1 = inventory;
         }
+        if (itemNo == 1)
+        {
+            inv2 = inventory;
+        }
+        if (itemNo == 2)
+        {
+            inv3 = inventory;
+        }
+        if (itemNo == 3)
+        {
+            inv4 = inventory;
+        }
+        if (itemNo == 4)
+        {
+            inv5 = inventory;
+        }
+        if (itemNo == 5)
+        {
+            inv6 = inventory;
+        }
+
     }
 
     /**
@@ -316,27 +355,33 @@ public class Player extends Mob
         // }
         // p = 0;
         // if (inv.length > -1){
-        if (inv.length > -1){
-            for(p=0;p<inv.length;p++)
-            {
-                // setLocation(p,11);
-                // invholder = (Item)getOneIntersectingObject(Item.class);
-                // try {
-                // Item[] inv = getWorld().getObjectsAt(p,11,Item.class).toArray(new Item[0]); //This converts the list of items currently held into an array, going along the X axis.
-                // inv = getWorld().getObjectsAt(p,11, Item.class).toArray(new inv[p]);
-                // } catch (Exception e){e.printStackTrace();}
-                // if (p != null)
-                // {
-                // if (inv.length > 0){
-                if (inv[p]!=null){invholder = inv[p]; } //If there is an item in the array, reference it under invholder.
+        // if (inv.length > -1){
+            // for(p=0;p<inv.length;p++)
+            // {
+                // // setLocation(p,11);
+                // // invholder = (Item)getOneIntersectingObject(Item.class);
+                // // try {
+                // // Item[] inv = getWorld().getObjectsAt(p,11,Item.class).toArray(new Item[0]); //This converts the list of items currently held into an array, going along the X axis.
+                // // inv = getWorld().getObjectsAt(p,11, Item.class).toArray(new inv[p]);
+                // // } catch (Exception e){e.printStackTrace();}
+                // // if (p != null)
+                // // {
+                // // if (inv.length > 0){
+                // if (inv[p]!=null){invholder = inv[p]; } //If there is an item in the array, reference it under invholder.
+                // // }
+                // // }
+                // if (invholder != null){ //If invholder isn't null, put it in the new level with the same x axis as before.
+                    // nextLevel.addObject(invholder, p, 11);
                 // }
-                // }
-                if (invholder != null){ //If invholder isn't null, put it in the new level with the same x axis as before.
-                    nextLevel.addObject(invholder, p, 11);
-                }
-            }
-        }
+            // }
         // }
+        // }
+        if (inv1 != null){nextLevel.addObject(inv1, 0, 11);};
+        if (inv2 != null){nextLevel.addObject(inv2, 1, 11);};
+        if (inv3 != null){nextLevel.addObject(inv3, 2, 11);};
+        if (inv4 != null){nextLevel.addObject(inv4, 3, 11);};
+        if (inv5 != null){nextLevel.addObject(inv5, 4, 11);};
+        if (inv6 != null){nextLevel.addObject(inv6, 5, 11);};
         if (wornweapon != null){nextLevel.addObject(wornweapon, 7, 11);}
         if (wornarmor != null){nextLevel.addObject(wornarmor, 10, 11);} 
         if (wornshield != null){nextLevel.addObject(wornshield, 6, 11);}
