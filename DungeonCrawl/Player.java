@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList.*; //Imports java's ArrayList utility
+import java.util.*; //Imports java's utility library.
 
 /**
  * The Player class represents the player's character in the world.

@@ -115,7 +115,8 @@ public class TestWorld extends ActiveWorld
                         }
                         else if (!stairsAdded){ //Otherwise, if the stairs have not been added yet, execute nested code.
                             if (Greenfoot.getRandomNumber(100)<=10){ //If randomly-selected number is equal to, or smaller than, ten, execute below code.
-                                addObject(new Stairs(), wallX[x], wallY[y]); //Adds a stairs turf to the current X and Y values.
+                                //addObject(new Stairs(), wallX[x], wallY[y]); //Adds a stairs turf to the current X and Y values.
+                                createStairs(wallX[x], wallY[y]);
                                 stairsAdded = true; //Turns the boolean stairsAdded to true.
                             }
                             else //Otherwise,
@@ -141,13 +142,13 @@ public class TestWorld extends ActiveWorld
          * If stairs weren't added the entire generation process, they will spawn at the last possible tile.
          */
         if (!stairsAdded) {
-            if (progressiveDifficulty != 21){
-                addObject(new Stairs(), 8, 8);
+            if (!bossLevel){
+                createStairs(8, 8);
             }
         }
-        
+
         //debug
-        addObject(new Stairs(), 5, 5);
+        //addObject(new Stairs(), 5, 5);
     }
 
     /**
@@ -169,6 +170,25 @@ public class TestWorld extends ActiveWorld
         {
             FinalBossLevel();
         }
+    }
+
+    /**
+     * Used in method generateWorld.
+     * Creates stair, and clears walls from the 4 cardinal directions.
+     */
+    private void createStairs(int x, int y)
+    {
+        addObject(new Stairs(), x, y); //Adds a stairs turf to the provided X and Y values.
+        //try{
+        if (getObjectsAt(x - 1, y, Wall.class).size() != 0){removeObject(getObjectsAt(x - 1, y, Wall.class).get(0));
+            addObject(new Floor(), x - 1, y); }
+        if (getObjectsAt(x , y - 1, Wall.class).size() != 0){removeObject(getObjectsAt(x , y - 1, Wall.class).get(0));
+            addObject(new Floor(), x , y - 1);}
+        if (getObjectsAt(x + 1, y, Wall.class).size() != 0){removeObject(getObjectsAt(x + 1, y, Wall.class).get(0));
+            addObject(new Floor(), x + 1, y);}
+        if (getObjectsAt(x, y + 1, Wall.class).size() != 0){removeObject(getObjectsAt(x, y + 1, Wall.class).get(0));
+            addObject(new Floor(), x, y + 1);}
+        //} catch(Exception e){} 
     }
 
     /**
@@ -224,14 +244,14 @@ public class TestWorld extends ActiveWorld
         /*
         else if (Greenfoot.getRandomNumber(100)<15)
         {
-            addObject(new HealthPotion(), wallX[x], wallY[y]);
+        addObject(new HealthPotion(), wallX[x], wallY[y]);
         }
-        
+
         else if (Greenfoot.getRandomNumber(100)<20)
         {
-            addObject(new SmallHealthPotion(), wallX[x], wallY[y]);
+        addObject(new SmallHealthPotion(), wallX[x], wallY[y]);
         }
-        */
+         */
         else if (Greenfoot.getRandomNumber(10000)<80)
         {
             addObject(new ArtifactChest(), wallX[x], wallY[y]);
