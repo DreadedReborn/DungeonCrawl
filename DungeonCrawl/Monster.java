@@ -90,7 +90,7 @@ public abstract class Monster extends Mob
             }
             //GifImage gifimage = new GifImage(damagedEnemy);
             //setImage(gifimage.getCurrentImage());]
-            getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
+            getWorld().addObject(new HitEffect(Integer.toString(dmg - eDefense)), getX(), getY());
             takingDamage = true;
 
             if (eHealth <= 0)

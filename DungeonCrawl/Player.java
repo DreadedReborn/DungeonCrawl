@@ -243,13 +243,14 @@ public class Player extends Mob
                         EndTurn();
                     }
                 }
-                else if (upEnemy!=null){
-                    if(Greenfoot.isKeyDown("w")) {
-                        upEnemy.takeDamage(Attack, upEnemy);
-                        EndTurn();
-                    }
+            }
+            else if (upEnemy!=null){
+                if(Greenfoot.isKeyDown("w")) {
+                    upEnemy.takeDamage(Attack, upEnemy);
+                    EndTurn();
                 }
             }
+
         }
         if (collideOnce != null){
             if (counter !=null){
@@ -356,24 +357,24 @@ public class Player extends Mob
         // p = 0;
         // if (inv.length > -1){
         // if (inv.length > -1){
-            // for(p=0;p<inv.length;p++)
-            // {
-                // // setLocation(p,11);
-                // // invholder = (Item)getOneIntersectingObject(Item.class);
-                // // try {
-                // // Item[] inv = getWorld().getObjectsAt(p,11,Item.class).toArray(new Item[0]); //This converts the list of items currently held into an array, going along the X axis.
-                // // inv = getWorld().getObjectsAt(p,11, Item.class).toArray(new inv[p]);
-                // // } catch (Exception e){e.printStackTrace();}
-                // // if (p != null)
-                // // {
-                // // if (inv.length > 0){
-                // if (inv[p]!=null){invholder = inv[p]; } //If there is an item in the array, reference it under invholder.
-                // // }
-                // // }
-                // if (invholder != null){ //If invholder isn't null, put it in the new level with the same x axis as before.
-                    // nextLevel.addObject(invholder, p, 11);
-                // }
-            // }
+        // for(p=0;p<inv.length;p++)
+        // {
+        // // setLocation(p,11);
+        // // invholder = (Item)getOneIntersectingObject(Item.class);
+        // // try {
+        // // Item[] inv = getWorld().getObjectsAt(p,11,Item.class).toArray(new Item[0]); //This converts the list of items currently held into an array, going along the X axis.
+        // // inv = getWorld().getObjectsAt(p,11, Item.class).toArray(new inv[p]);
+        // // } catch (Exception e){e.printStackTrace();}
+        // // if (p != null)
+        // // {
+        // // if (inv.length > 0){
+        // if (inv[p]!=null){invholder = inv[p]; } //If there is an item in the array, reference it under invholder.
+        // // }
+        // // }
+        // if (invholder != null){ //If invholder isn't null, put it in the new level with the same x axis as before.
+        // nextLevel.addObject(invholder, p, 11);
+        // }
+        // }
         // }
         // }
         if (inv1 != null){nextLevel.addObject(inv1, 0, 11);};
