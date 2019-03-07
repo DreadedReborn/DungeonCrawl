@@ -23,6 +23,6 @@ public class WoodShield extends Shield
     public void act() 
     {
         pickUpEquipment(isWeapon);
-        updateStats(attack, weaponDefense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);
+        if (isEquipped){updateStats(attack, weaponDefense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }

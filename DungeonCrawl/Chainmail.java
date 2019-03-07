@@ -21,6 +21,6 @@ public class Chainmail extends Armor
     public void act() 
     {
         pickUpEquipment(isWeapon);
-        updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);
+        if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }

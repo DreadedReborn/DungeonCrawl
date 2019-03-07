@@ -13,7 +13,7 @@ public class ClothArmor extends Armor
     public int attack = 0;
     public ClothArmor()
     {
-        defense = 0;
+        defense = 1;
     }
 
     /**
@@ -23,6 +23,6 @@ public class ClothArmor extends Armor
     public void act() 
     {
         pickUpEquipment(isWeapon);
-        updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);
+        if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }

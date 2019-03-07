@@ -15,15 +15,15 @@ public class SteelArmor extends Armor
     {
         defense = 12;
     }
+
     /**
      * Act - do whatever the SteelArmor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        
-            pickUpEquipment(isWeapon);
-            updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);
-        
+
+        pickUpEquipment(isWeapon);
+        if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }

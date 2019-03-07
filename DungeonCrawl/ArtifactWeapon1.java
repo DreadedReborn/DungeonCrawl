@@ -23,6 +23,6 @@ public class ArtifactWeapon1 extends Weapon
     public void act() 
     {
         pickUpEquipment(isWeapon);
-        updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);
+        if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }
