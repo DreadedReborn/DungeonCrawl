@@ -95,7 +95,9 @@ public class Player extends Mob
 
     public void act()
     {
-        String key = Greenfoot.getKey();
+        String[] key = {"w","s","a","d","space"};
+        String keypressed = Greenfoot.getKey();
+        int p = 0;
         if (hasMoved){
             if (timer>=25)
             {
@@ -108,14 +110,18 @@ public class Player extends Mob
             }
         }
         else {
-            if (key != null){
-                TestWorld gameWorld = (TestWorld) getWorld();
-                gameWorld.Turn();
-                //hasMoved = true;
-            }
-            if (TurnActive = true)
-            {
-                actOnTurn();
+            if (keypressed != null){
+                for (p=0; p>=5; p++){
+                    if (keypressed == key[p]){
+                        TestWorld gameWorld = (TestWorld) getWorld();
+                        gameWorld.Turn();
+                    }
+                }
+                p = 0;
+                if (TurnActive = true)
+                {
+                    actOnTurn();
+                }
             }
         }
         changeAnimation();
