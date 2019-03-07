@@ -5,13 +5,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Created as a result of feedback from a player.
  * 
  * @author PC
- * @version 1.0
+ * @version rework2
  */
 public class PaladinShield extends Shield
 {
     public int isWeapon = 2;
-    private int weaponDefense = 14;
+
     private int attack = 0;
+    public PaladinShield()
+    {
+        weaponDefense = 14;
+    }
+
     /**
      * Act - do whatever the PaladinShield wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

@@ -5,16 +5,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Provides extreme defense at the cost of current weapon.
  * 
  * @author PC
- * @version rework
+ * @version rework2
  */
 public class ArtifactArmor1 extends Armor
 {
     public int isWeapon = 1;
     public int attack = 0;
-    public int defense = 18;
     public ArtifactArmor1()
     {
         isArtifact = true;
+        defense = 18;
     }
     /**
      * Act - do whatever the ArtifactArmor1 wants to do. This method is called whenever

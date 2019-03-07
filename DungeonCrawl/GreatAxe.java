@@ -5,13 +5,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Defense down has been temporarily removed.
  * 
  * @author PC 
- * @version rework
+ * @version rework2
  */
 public class GreatAxe extends Weapon
 {
     
-    public int attack = 10;
     public int defense = 0;
+    
+    public GreatAxe()
+    {
+        attack = 10;
+    }
 
     /**
      * Act - do whatever the GreatAxe wants to do. This method is called whenever

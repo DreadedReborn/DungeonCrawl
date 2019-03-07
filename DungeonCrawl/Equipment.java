@@ -5,7 +5,7 @@ import java.util.List;
  * Superclass for all items that are equippable, i.e. armor, etc.
  * 
  * @author PC
- * @version swords and blades
+ * @version rework2
  */
 public abstract class Equipment extends Obj
 {
@@ -20,9 +20,9 @@ public abstract class Equipment extends Obj
     //This helps by reducing the amount of duplicate lines of code, thus making the code as a whole more efficient.
     //Also, keeping the code flexible to allow for differences in each method.
     //0 is Weapon, 1 is Armor and 2 is Shield.
-    
+
     // mfr explains use of a variety of data types U6 P4 U22 M1 also U6 P2 U15 M1 
-    
+
     /**
      * Allows the object to be picked up and stored.
      * Differs to Item.pickUp in that it stores only in two slots, not the inventory.
@@ -35,34 +35,83 @@ public abstract class Equipment extends Obj
         if(player!=null){
             if(isWeapon == 0){
                 if (((Player)getWorld().getObjects(Player.class).get(0)).isCursed == false) {
-                    value = 7;
-                    //if (((Player)getWorld().getObjects(Player.class).get(0)).wornweapon instanceof) {
-                    // }
-                    //else { 
-                    getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornweapon);
-                    ((Player)getWorld().getObjects(Player.class).get(0)).wornweapon = (Weapon)this;
-                    // }
-                    //}
+                    if (!isEquipmentWorse(((Weapon)this).findAttack(), findOld)){
+                        value = 7;
+                        //if (((Player)getWorld().getObjects(Player.class).get(0)).wornweapon instanceof) {
+                        // }
+                        //else { 
+                        getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornweapon);
+                        ((Player)getWorld().getObjects(Player.class).get(0)).wornweapon = (Weapon)this;
+                        // }
+                        //}
+                    }
+                    else{recycleWorseEquipment((Weapon)this);}
                 }
             }
             else if (isWeapon == 1) {
                 if (((Player)getWorld().getObjects(Player.class).get(0)).isCursed == false) {
-                    value = 8;
-                    getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornarmor);
-                    ((Player)getWorld().getObjects(Player.class).get(0)).wornarmor = (Armor)this;
+                    if (!isEquipmentWorse(((Armor)this).findDefense(), isWeapon, this, (Equipment)getWorld().getObjects(Player.class).get(0).wornarmor)){
+                        value = 8;
+                        getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornarmor);
+                        ((Player)getWorld().getObjects(Player.class).get(0)).wornarmor = (Armor)this;
+                    }
+                    else{recycleWorseEquipment((Armor)this);}
                 }
             }
             else if (isWeapon == 2){
                 if (((Player)getWorld().getObjects(Player.class).get(0)).isCursed == false) {
-                    value = 6;
-                    getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornshield);
-                    ((Player)getWorld().getObjects(Player.class).get(0)).wornshield = (Shield)this;
+                    if (!isEquipmentWorse(((Shield)this).findItemDefense(),(Player)getWorld().getObjects(Player.class).get(0)).wornshield.defense){
+                        value = 6;
+                        getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornshield);
+                        ((Player)getWorld().getObjects(Player.class).get(0)).wornshield = (Shield)this;
+                    }
+                    else{recycleWorseEquipment((Shield)this);}
                 }
             }
             if (value != 0){
                 setLocation(value, 10);
             }
         }
+    }
+
+    /**
+     * Compares two pieces of equipment, and returns true if the first equipment (Normally the old equipment) is worse in terms of stats.
+     */
+    private boolean isEquipmentWorse(int stat, int stat2)
+    {
+        // if (isWeapon == 0){
+        int x = stat;
+        int y = stat2;
+        if (x < y)
+        {return true;}
+        else {return false;}
+        //
+        /*}
+        else if (isWeapon == 1){
+        int x = stat;
+        int y = ((Armor)equipment2).findDefense();
+        if (x < y)
+        {return true;}
+        else {return false;}
+        }
+        else if (isWeapon == 2){
+        int x = stat;
+        int y = ((Shield)equipment2).findItemDefense();
+        if (x < y)
+        {return true;}
+        else {return false;}
+        }
+        else {return false;}
+         */
+    }
+
+    /**
+     * If a piece of equipment is worse than current equipment, remove it and spawn equivalent gold calculated on worse item's stats.
+     */
+    private void recycleWorseEquipment(Actor oldEquipment)
+    {
+        getWorld().removeObject(oldEquipment);
+        getWorld().addObject(new Gold(), getX(), getY());
     }
 
     /**
@@ -141,5 +190,21 @@ public abstract class Equipment extends Obj
     {
         return ((Player)getWorld().getObjects(Player.class).get(0)).weaponDefense;
     }
+    /*
+    public int findAttack()
+    {
 
+    return ((Weapon)this).attack;
+    }
+
+    public int findDefense()
+    {
+    return this.defense;
+    }
+
+    public int findItemDefense()
+    {
+    return this.weaponDefense;
+    }
+     */
 }

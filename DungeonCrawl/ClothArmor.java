@@ -11,7 +11,10 @@ public class ClothArmor extends Armor
     public int isWeapon = 1;
 
     public int attack = 0;
-    public int defense = 0;
+    public ClothArmor()
+    {
+        defense = 0;
+    }
 
     /**
      * Act - do whatever the ClothArmor wants to do. This method is called whenever

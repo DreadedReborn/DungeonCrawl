@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.target=Armor
-comment0.text=\r\n\ Superclass\ of\ all\ armor\ equipment\ in\ the\ game.\r\n\ \r\n\ @author\ PC\r\n\ @version\ bronze\ and\ chains\r\n
-numComments=1
+comment0.text=\r\n\ Superclass\ of\ all\ armor\ equipment\ in\ the\ game.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework2\r\n
+comment1.params=
+comment1.target=int\ findDefense()
+numComments=2
