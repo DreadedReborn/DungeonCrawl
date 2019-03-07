@@ -9,13 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PaladinSword extends Weapon
 {
     public int isWeapon = 0;
-    public int attack = 20;
     public int defense = 0;
     private GifImage gifimage;
-    
+
     public PaladinSword()
     {
         gifimage = new GifImage("paladinsword.gif");
+        attack = 20;
     }
 
     /**
