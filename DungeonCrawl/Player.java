@@ -97,7 +97,7 @@ public class Player extends Mob
     {
         String[] key = {"w","s","a","d","space"};
         String keypressed = Greenfoot.getKey();
-        int p = 0;
+        int keychoose = 0;
         if (hasMoved){
             if (timer>=25)
             {
@@ -111,13 +111,15 @@ public class Player extends Mob
         }
         else {
             if (keypressed != null){
-                for (p=0; p>=5; p++){
-                    if (keypressed == key[p]){
+                for(keychoose=0; keychoose<5; keychoose++){
+                    String keyselect = key[keychoose];
+
+                    if (keypressed.equals(keyselect)){
                         TestWorld gameWorld = (TestWorld) getWorld();
                         gameWorld.Turn();
                     }
                 }
-                p = 0;
+                //p = 0;
                 if (TurnActive = true)
                 {
                     actOnTurn();

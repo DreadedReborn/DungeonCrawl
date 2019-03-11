@@ -413,7 +413,6 @@ public class TestWorld extends ActiveWorld
     public void Turn()
     {
         getObjects(Player.class).get(0).TurnActive = true;
-
         for (Skeleton skeleton : getObjects(Skeleton.class)) {
             //Skeleton.getTurnActive();
             skeleton.setTurnActive(true);
