@@ -59,16 +59,6 @@ public class Lich extends Monster
      */
     public void ActOnTurn() 
     {
-        /*
-        if (takingDamage)
-        {
-
-        }
-        else {
-
-        }
-         */
-
         movement(bossAttack);
         openDoor();
         summonSkeletons();
