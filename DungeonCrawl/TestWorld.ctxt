@@ -5,19 +5,6 @@ comment1.params=playerAlreadyhere\ prevscore\ prevhealth\ progressiveDifficulty
 comment1.target=TestWorld(boolean,\ int,\ int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TestWorld.\r\n\ \r\n
 comment10.params=
-<<<<<<< HEAD
-comment10.target=Counter\ getHealthBar()
-comment10.text=\r\n\ Used\ by\ Actors\ to\ get\ a\ reference\ to\ the\ healthbar\ object.\r\n\ The\ object\ is\ a\ Counter.\r\n
-comment11.params=Health
-comment11.target=void\ renderHealth(int)
-comment11.text=\r\n\ Changes\ the\ displayed\ health\ in\ the\ health\ bar.\ This\ does\ not\ include\ a\ change,\ and\ should\ be\ used\ for\ setting\ the\ health\ at\ the\ start\ of\ the\ game.\r\n
-comment12.params=Health\ healthpotion
-comment12.target=void\ changeHealth(int,\ HealthPotion)
-comment12.text=\r\n\ Changes\ the\ health\ in\ the\ health\ bar.\ This\ includes\ an\ animation\ for\ changing\ between\ states.\ This\ should\ be\ used\ for\ calculating\ damage\ during\ the\ game.\r\n\ @param\ Health\ as\ Integer.\r\n
-comment13.params=
-comment13.target=void\ Turn()
-comment13.text=\r\n\ When\ called\ by\ a\ class,\ engages\ an\ entire\ "turn"\ for\ the\ map.\ This\ allows\ all\ classes\ with\ 'ActOnTurn'\ to\ perform\ actions.\r\n
-=======
 comment10.target=void\ prepareGUI()
 comment10.text=\r\n\ Used\ to\ prepare\ the\ hotbars\ for\ the\ player,\ and\ the\ walls\ that\ stop\ mobs\ from\ climbing\ all\ over\ it.\r\n
 comment11.params=
@@ -32,7 +19,6 @@ comment13.text=\r\n\ Changes\ the\ health\ in\ the\ health\ bar.\ This\ includes
 comment14.params=
 comment14.target=void\ Turn()
 comment14.text=\r\n\ When\ called\ by\ a\ class,\ engages\ an\ entire\ "turn"\ for\ the\ map.\ This\ allows\ all\ classes\ with\ 'ActOnTurn'\ to\ perform\ actions.\r\n
->>>>>>> dev
 comment2.params=progressiveDifficulty
 comment2.target=void\ generateLevel(int)
 comment2.text=\r\n\ Generates\ the\ current\ level\ for\ the\ player\ to\ go\ through.\r\n\ Key\ items\ will\ always\ have\ a\ path\ available\ to\ them,\ along\ with\ gold,\ items,\ chests\ and\ enemies.\r\n\ \r\n
