@@ -241,17 +241,6 @@ public class TestWorld extends ActiveWorld
         {
             addObject(new BronzeChest(), wallX[x], wallY[y]);
         }
-        /*
-        else if (Greenfoot.getRandomNumber(100)<15)
-        {
-        addObject(new HealthPotion(), wallX[x], wallY[y]);
-        }
-
-        else if (Greenfoot.getRandomNumber(100)<20)
-        {
-        addObject(new SmallHealthPotion(), wallX[x], wallY[y]);
-        }
-         */
         else if (Greenfoot.getRandomNumber(10000)<80)
         {
             addObject(new ArtifactChest(), wallX[x], wallY[y]);
@@ -354,11 +343,7 @@ public class TestWorld extends ActiveWorld
      */
     public void prepareGUI()
     {
-        /*
-         * for(x=0;x<=9;x++){
-         *  addObject(new Wall(), x, 9);
-         * }
-         */
+
         addObject(new EmptyHotbar(), 4, 9);
         addObject(new Hotbar(), 4, 10);
     }

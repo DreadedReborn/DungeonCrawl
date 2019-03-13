@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Mar 11 14:07:45 GMT 2019
+#Wed Mar 13 09:20:56 GMT 2019
 target49.type=ClassTarget
 target24.type=AbstractTarget
 target16.name=HitEffect
@@ -822,8 +822,8 @@ target11.x=0
 dependency19.to=EndWorld
 dependency9.type=UsesDependency
 dependency72.to=Player
-editor.fx.0.y=179
-editor.fx.0.x=69
+editor.fx.0.y=185
+editor.fx.0.x=78
 dependency8.to=TestWorld
 target44.typeParameters=
 target26.showInterface=false
