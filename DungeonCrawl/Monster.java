@@ -51,6 +51,22 @@ public abstract class Monster extends Mob
         if (getWorld().getObjects(Lich.class).size() != 0)
         {
             Lich lich = getWorld().getObjects(Lich.class).get(0);
+<<<<<<< HEAD
+            health = lich.getBossHealth();
+            defense = lich.getBossDefense();
+            if (dmg - defense < 0)
+            {
+                health = health;
+            }
+            else {
+                health = health - ( dmg - defense);
+            }
+            getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
+
+            if (health <= 0)
+            {
+=======
+>>>>>>> dev
 
             if (lich.isBoss){ //If the monster is a boss enemy
 

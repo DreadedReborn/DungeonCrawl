@@ -30,7 +30,10 @@ public class TestWorld extends ActiveWorld
     private boolean stairsAdded = false; //Boolean, used to check whether or not stairs were added in the level generation.
     public boolean playerInWorld; //Boolean, used to check if Player.class exists in the world.
     public boolean bossLevel = false;
+<<<<<<< HEAD
+=======
     private boolean bossSpawned = false;
+>>>>>>> dev
     /*
 
     public TestWorld()
@@ -170,6 +173,8 @@ public class TestWorld extends ActiveWorld
         {
             FinalBossLevel();
         }
+<<<<<<< HEAD
+=======
     }
 
     /**
@@ -189,6 +194,7 @@ public class TestWorld extends ActiveWorld
         if (getObjectsAt(x, y + 1, Wall.class).size() != 0){removeObject(getObjectsAt(x, y + 1, Wall.class).get(0));
             addObject(new Floor(), x, y + 1);}
         //} catch(Exception e){} 
+>>>>>>> dev
     }
 
     /**
@@ -276,6 +282,14 @@ public class TestWorld extends ActiveWorld
         else if (Greenfoot.getRandomNumber(250)<80)
         {
             addObject(new PaladinChest(), wallX[x], wallY[y]);
+<<<<<<< HEAD
+        } 
+        else if (Greenfoot.getRandomNumber(100)<80)
+        {
+            addObject(new SteelChest(), wallX[x], wallY[y]);
+        }
+        addObject(new Lich(), wallX[x], wallY[y]);
+=======
         }
         if (!bossSpawned){
             if (Greenfoot.getRandomNumber(40)<20){
@@ -290,6 +304,7 @@ public class TestWorld extends ActiveWorld
                 bossSpawned = true;
             }
         }
+>>>>>>> dev
         bossLevel = true;
     }
 
