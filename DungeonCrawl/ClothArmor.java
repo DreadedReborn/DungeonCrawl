@@ -11,7 +11,10 @@ public class ClothArmor extends Armor
     public int isWeapon = 1;
 
     public int attack = 0;
-    public int defense = 0;
+    public ClothArmor()
+    {
+        defense = 1;
+    }
 
     /**
      * Act - do whatever the ClothArmor wants to do. This method is called whenever
@@ -20,6 +23,6 @@ public class ClothArmor extends Armor
     public void act() 
     {
         pickUpEquipment(isWeapon);
-        updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);
+        if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }

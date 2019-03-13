@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Equipment
-comment0.text=\r\n\ Superclass\ for\ all\ items\ that\ are\ equippable,\ i.e.\ armor,\ etc.\r\n\ \r\n\ @author\ PC\r\n\ @version\ swords\ and\ blades\r\n
+comment0.text=\r\n\ Superclass\ for\ all\ items\ that\ are\ equippable,\ i.e.\ armor,\ etc.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework2\r\n
 comment1.params=isWeapon
 comment1.target=void\ pickUpEquipment(int)
 comment1.text=\r\n\ Allows\ the\ object\ to\ be\ picked\ up\ and\ stored.\r\n\ Differs\ to\ Item.pickUp\ in\ that\ it\ stores\ only\ in\ two\ slots,\ not\ the\ inventory.\r\n\ @param\ Boolean,\ provided\ by\ subclass.\r\n
-comment2.params=Attack\ Defense\ oldAttack\ oldDefense\ isWeapon\ isArtifact
-comment2.target=void\ updateStats(int,\ int,\ int,\ int,\ int,\ boolean)
-comment2.text=\r\n\ Allows\ the\ object\ to\ update\ the\ player\ stats\ when\ equipped.\r\n\ Only\ applies\ to\ "equipped"\ (getY\ \=\ 10)\ equipment.\r\n\ \r\n\ @param\ Integer,\ for\ Attack\ stat\ increase.\r\n\ @param\ Integer,\ for\ Defense\ stat\ increase.\r\n\ @param\ Boolean,\ for\ checking\ if\ the\ equipment\ is\ a\ weapon\ or\ an\ armor\ (true\ or\ false)\r\n\ @param\ Boolean,\ for\ checking\ if\ the\ equipment\ is\ an\ artifact.\r\n\ Parameters\ can\ also\ be\ negatives\ to\ remove\ stat\ points.\r\n
-comment3.params=
-comment3.target=int\ findOldAttack()
-comment4.params=
-comment4.target=int\ findOldDefense()
+comment2.params=stat\ stat2
+comment2.target=boolean\ isEquipmentWorse(int,\ int)
+comment2.text=\r\n\ Compares\ two\ pieces\ of\ equipment,\ and\ returns\ true\ if\ the\ first\ equipment\ (Normally\ the\ old\ equipment)\ is\ worse,\ or\ equal,\ in\ terms\ of\ stats.\r\n
+comment3.params=oldEquipment
+comment3.target=void\ recycleWorseEquipment(Equipment)
+comment3.text=\r\n\ If\ a\ piece\ of\ equipment\ is\ worse\ than\ current\ equipment,\ remove\ it\ and\ spawn\ equivalent\ gold\ calculated\ on\ worse\ item's\ stats.\r\n
+comment4.params=Attack\ Defense\ oldAttack\ oldDefense\ isWeapon\ isArtifact
+comment4.target=void\ updateStats(int,\ int,\ int,\ int,\ int,\ boolean)
+comment4.text=\r\n\ Allows\ the\ object\ to\ update\ the\ player\ stats\ when\ equipped.\r\n\ Only\ applies\ to\ "equipped"\ (getY\ \=\ 10)\ equipment.\r\n\ \r\n\ @param\ Integer,\ for\ Attack\ stat\ increase.\r\n\ @param\ Integer,\ for\ Defense\ stat\ increase.\r\n\ @param\ Boolean,\ for\ checking\ if\ the\ equipment\ is\ a\ weapon\ or\ an\ armor\ (true\ or\ false)\r\n\ @param\ Boolean,\ for\ checking\ if\ the\ equipment\ is\ an\ artifact.\r\n\ Parameters\ can\ also\ be\ negatives\ to\ remove\ stat\ points.\r\n
 comment5.params=
-comment5.target=int\ findOldItemDefense()
-numComments=6
+comment5.target=int\ findOldAttack()
+comment6.params=
+comment6.target=int\ findOldDefense()
+comment7.params=
+comment7.target=int\ findOldItemDefense()
+numComments=8

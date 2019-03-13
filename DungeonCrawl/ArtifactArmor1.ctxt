@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ArtifactArmor1
-comment0.text=\r\n\ What\ was\ once\ an\ attempt\ at\ Paladin\ armor,\ it\ is\ now\ a\ diving\ suit.\r\n\ Provides\ extreme\ defense\ at\ the\ cost\ of\ current\ weapon.\r\n\ \r\n\ @author\ PC\r\n\ @version\ deep\ sea\ paladins\r\n
+comment0.text=\r\n\ What\ was\ once\ an\ attempt\ at\ Paladin\ armor,\ it\ is\ now\ a\ diving\ suit.\r\n\ Provides\ extreme\ defense\ at\ the\ cost\ of\ current\ weapon.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework2\r\n
 comment1.params=
 comment1.target=ArtifactArmor1()
 comment2.params=

@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=LeatherArmor
-comment0.text=\r\n\ Tier\ 1\ armor\ equipment.\ Provides\ 3\ defense\ and\ 0\ attack.\r\n\ \r\n\ @author\ PC\r\n\ @version\ tanned\r\n
+comment0.text=\r\n\ Tier\ 1\ armor\ equipment.\ Provides\ 5\ defense\ and\ 0\ attack.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework2\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ LeatherArmor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.target=LeatherArmor()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ LeatherArmor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

@@ -119,7 +119,7 @@ public class Lich extends Monster
      */
     public void setBossHealth(int newHealth)
     {
-        eHealth = newHealth;
+        bossHealth = newHealth;
     }
 
 }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ArtifactWeapon1
-comment0.text=\r\n\ Provides\ extreme\ attack\ at\ the\ cost\ of\ all\ defense\ +\ armor.\r\n\ \r\n\ @author\ PC\r\n\ @version\ gilgamesh\r\n
+comment0.text=\r\n\ Provides\ extreme\ attack\ at\ the\ cost\ of\ all\ defense\ +\ armor.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework2\r\n
 comment1.params=
 comment1.target=ArtifactWeapon1()
 comment2.params=

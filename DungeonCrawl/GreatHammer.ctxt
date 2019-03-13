@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=GreatHammer
-comment0.text=\r\n\ Tier-4\ melee\ weapon.\r\n\ Provides\ 11\ attack\ and\ 0\ defense.\r\n\ \r\n\ @author\ PC\r\n\ @version\ mallet\ master\r\n
+comment0.text=\r\n\ Tier-4\ melee\ weapon.\r\n\ Provides\ 13\ attack\ and\ 0\ defense.\r\n\ \r\n\ @author\ PC\r\n\ @version\ rework2\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ GreatHammer\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.target=GreatHammer()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ GreatHammer\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3
