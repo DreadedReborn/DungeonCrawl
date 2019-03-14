@@ -51,22 +51,6 @@ public abstract class Monster extends Mob
         if (getWorld().getObjects(Lich.class).size() != 0)
         {
             Lich lich = getWorld().getObjects(Lich.class).get(0);
-<<<<<<< HEAD
-            health = lich.getBossHealth();
-            defense = lich.getBossDefense();
-            if (dmg - defense < 0)
-            {
-                health = health;
-            }
-            else {
-                health = health - ( dmg - defense);
-            }
-            getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
-
-            if (health <= 0)
-            {
-=======
->>>>>>> dev
 
             health = lich.getBossHealth();
             defense = lich.getBossDefense();
@@ -82,58 +66,73 @@ public abstract class Monster extends Mob
             if (health <= 0)
             {
 
-                if (lich.isBoss){ //If the monster is a boss enemy
-                    health = lich.getBossHealth();
-                    defense = lich.getBossDefense();
-                    if (dmg - defense < 0)
-                    {
-                        health = health;
-                    }
-                    else {
-                        health = health - ( dmg - defense);
-                    }
-                    getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
-
-                    if (health <= 0)
-                    {
-
-                        if (Greenfoot.getRandomNumber(100)>=60)
-                        {
-                            getWorld().addObject(new Gold(), getX(), getY());
-                        }
-                        getWorld().removeObject(this);
-                    }
-                    else {
-                        lich.setBossHealth(health);
-                    }
-                }
-            }
-            else {
-                if (dmg - eDefense < 0)
+                health = lich.getBossHealth();
+                defense = lich.getBossDefense();
+                if (dmg - defense < 0)
                 {
-                    eHealth = eHealth;
-                    dmg = 0;
+                    health = health;
                 }
                 else {
-                    eHealth = eHealth - ( dmg - eDefense);
+                    health = health - ( dmg - defense);
                 }
-                //GifImage gifimage = new GifImage(damagedEnemy);
-                //setImage(gifimage.getCurrentImage());]
-                getWorld().addObject(new HitEffect(Integer.toString(dmg - eDefense)), getX(), getY());
-                takingDamage = true;
+                getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
 
-                if (eHealth <= 0)
+                if (health <= 0)
                 {
 
-                    if (Greenfoot.getRandomNumber(100)>=60)
-                    {
-                        getWorld().addObject(new Gold(), getX(), getY());
+                    if (lich.isBoss){ //If the monster is a boss enemy
+                        health = lich.getBossHealth();
+                        defense = lich.getBossDefense();
+                        if (dmg - defense < 0)
+                        {
+                            health = health;
+                        }
+                        else {
+                            health = health - ( dmg - defense);
+                        }
+                        getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
+
+                        if (health <= 0)
+                        {
+
+                            if (Greenfoot.getRandomNumber(100)>=60)
+                            {
+                                getWorld().addObject(new Gold(), getX(), getY());
+                            }
+                            getWorld().removeObject(this);
+                        }
+                        else {
+                            lich.setBossHealth(health);
+                        }
                     }
-                    getWorld().removeObject(this);
                 }
             }
-
         }
+        else {
+            if (dmg - eDefense < 0)
+            {
+                eHealth = eHealth;
+                dmg = 0;
+            }
+            else {
+                eHealth = eHealth - ( dmg - eDefense);
+            }
+            //GifImage gifimage = new GifImage(damagedEnemy);
+            //setImage(gifimage.getCurrentImage());]
+            getWorld().addObject(new HitEffect(Integer.toString(dmg - eDefense)), getX(), getY());
+            takingDamage = true;
+
+            if (eHealth <= 0)
+            {
+
+                if (Greenfoot.getRandomNumber(100)>=60)
+                {
+                    getWorld().addObject(new Gold(), getX(), getY());
+                }
+                getWorld().removeObject(this);
+            }
+        }
+
     }
 
     /**
