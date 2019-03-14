@@ -106,33 +106,33 @@ public abstract class Monster extends Mob
                         }
                     }
                 }
-                else {
-                    if (dmg - eDefense < 0)
-                    {
-                        eHealth = eHealth;
-                        dmg = 0;
-                    }
-                    else {
-                        eHealth = eHealth - ( dmg - eDefense);
-                    }
-                    //GifImage gifimage = new GifImage(damagedEnemy);
-                    //setImage(gifimage.getCurrentImage());]
-                    getWorld().addObject(new HitEffect(Integer.toString(dmg - eDefense)), getX(), getY());
-                    takingDamage = true;
-
-                    if (eHealth <= 0)
-                    {
-
-                        if (Greenfoot.getRandomNumber(100)>=60)
-                        {
-                            getWorld().addObject(new Gold(), getX(), getY());
-                        }
-                        getWorld().removeObject(this);
-                    }
-                }
-
             }
         }
+        else {
+            if (dmg - eDefense < 0)
+            {
+                eHealth = eHealth;
+                dmg = 0;
+            }
+            else {
+                eHealth = eHealth - ( dmg - eDefense);
+            }
+            //GifImage gifimage = new GifImage(damagedEnemy);
+            //setImage(gifimage.getCurrentImage());]
+            getWorld().addObject(new HitEffect(Integer.toString(dmg - eDefense)), getX(), getY());
+            takingDamage = true;
+
+            if (eHealth <= 0)
+            {
+
+                if (Greenfoot.getRandomNumber(100)>=60)
+                {
+                    getWorld().addObject(new Gold(), getX(), getY());
+                }
+                getWorld().removeObject(this);
+            }
+        }
+
     }
 
     /**

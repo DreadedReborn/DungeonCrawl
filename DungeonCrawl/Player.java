@@ -44,7 +44,7 @@ public class Player extends Mob
     //====================================================================================================
     public Item invholder;
     // public Inventory inv2;
-
+    private String keypressed;
     /*
      * Booleans for checking if a monster exists.
      */
@@ -104,7 +104,7 @@ public class Player extends Mob
     public void act()
     {
         String[] key = {"w","s","a","d","space"};
-        String keypressed = Greenfoot.getKey();
+        keypressed = Greenfoot.getKey();
         int keychoose = 0;
         if (hasMoved){
             if (timer>=25)
@@ -240,20 +240,21 @@ public class Player extends Mob
             if (hotbar == null){
                 if (downEnemyTrue){
                     if (keypressed.equals("s")) {
+                        downEnemy.takeDamage(Attack, downEnemy);
+                        EndTurn();
+                    }
+                } 
+
+                else if (!downEnemyTrue){
+                    if (keypressed.equals("s")) {
                         if (downChest != null){
-                            downEnemy.takeDamage(Attack, downEnemy);
+                            openChest(downChest);
                             EndTurn();
                         }
                         else {
                             setLocation(getX(),getY() + d);
                             EndTurn();
                         }
-                    } 
-                } 
-                else if (!downEnemyTrue){
-                    if (keypressed.equals("s")) {
-                        openChest(downChest);
-                        EndTurn();
                     }
                 }
             }
