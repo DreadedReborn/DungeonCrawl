@@ -45,6 +45,14 @@ public class Player extends Mob
     public Item invholder;
     // public Inventory inv2;
 
+    /*
+     * Booleans for checking if a monster exists.
+     */
+    private boolean leftEnemyTrue;
+    private boolean rightEnemyTrue;
+    private boolean upEnemyTrue;
+    private boolean downEnemyTrue;
+
     public boolean isCursed = false;
     private boolean loadHealth = true;
     private boolean hasMoved = false;
@@ -160,6 +168,36 @@ public class Player extends Mob
         Monster upEnemy = (Monster)getOneObjectAtOffset(0, -1, Monster.class);
         Monster downEnemy = (Monster)getOneObjectAtOffset(0, 1, Monster.class);
         //Actor Skeleton = currentworld.getskeleton();
+
+        //Checks for enemies, and adds booleans based on their existance.
+        if (getOneObjectAtOffset(-1, 0, Monster.class) instanceof Monster)
+        {
+            leftEnemyTrue = true;
+        }
+        else {
+            leftEnemyTrue = false;
+        }
+        if (getOneObjectAtOffset(1, 0, Monster.class) instanceof Monster)
+        {
+            rightEnemyTrue = true;
+        }
+        else {
+            rightEnemyTrue = false;
+        }
+        if ((Monster)getOneObjectAtOffset(0, -1, Monster.class) instanceof Monster)
+        {
+            upEnemyTrue = true;
+        }
+        else {
+            upEnemyTrue = false;
+        }
+        if ((Monster)getOneObjectAtOffset(0, 1, Monster.class) instanceof Monster)
+        {
+            downEnemyTrue = true;
+        }
+        else {
+            downEnemyTrue = false;
+        }
         /*
          * Interactable Object Detection
          */
@@ -178,8 +216,14 @@ public class Player extends Mob
         //Actor Enemy = getNeighbours(1, false, Skeleton.class).get(0);
 
         if (leftCollide == null){ //trigger function
-            if (leftEnemy == null){
-                if (Greenfoot.isKeyDown("a")) {//another trigger function
+            if (leftEnemyTrue){
+                if (keypressed.equals("a")){
+                    leftEnemy.takeDamage(Attack, leftEnemy);
+                    EndTurn();
+                }
+            } 
+            else if (!leftEnemyTrue){
+                if (keypressed.equals("a")) {//another trigger function
                     if (leftChest != null){
                         openChest(leftChest);
                         EndTurn();
@@ -190,19 +234,14 @@ public class Player extends Mob
                     }
                 } 
             } 
-            else if (leftEnemy != null){
-                if (Greenfoot.isKeyDown("a")){
-                    leftEnemy.takeDamage(Attack, leftEnemy);
-                    EndTurn();
-                }
-            }
-        } 
+        }
+
         if (downCollide == null){
             if (hotbar == null){
-                if (downEnemy == null){
-                    if (Greenfoot.isKeyDown("s")) {
+                if (downEnemyTrue){
+                    if (keypressed.equals("s")) {
                         if (downChest != null){
-                            openChest(downChest);
+                            downEnemy.takeDamage(Attack, downEnemy);
                             EndTurn();
                         }
                         else {
@@ -211,17 +250,17 @@ public class Player extends Mob
                         }
                     } 
                 } 
-                else if (downEnemy != null){
-                    if (Greenfoot.isKeyDown("s")) {
-                        downEnemy.takeDamage(Attack, downEnemy);
+                else if (!downEnemyTrue){
+                    if (keypressed.equals("s")) {
+                        openChest(downChest);
                         EndTurn();
                     }
                 }
             }
         }
         if (rightCollide==null){
-            if (rightEnemy==null){
-                if(Greenfoot.isKeyDown("d")) {
+            if (!rightEnemyTrue){
+                if(keypressed.equals("d")) {
                     if (rightChest != null){
                         openChest(rightChest);
                         EndTurn();
@@ -232,16 +271,16 @@ public class Player extends Mob
                     }
                 } 
             }
-            else if (rightEnemy != null){
-                if(Greenfoot.isKeyDown("d")) {
+            else if (rightEnemyTrue){
+                if(keypressed.equals("d")) {
                     rightEnemy.takeDamage(Attack, rightEnemy);
                     EndTurn();
                 }
             }
         }
         if (upCollide == null){
-            if (upEnemy == null){
-                if(Greenfoot.isKeyDown("w")) {
+            if (!upEnemyTrue){
+                if(keypressed.equals("w")) {
                     if (upChest != null){
                         openChest(upChest);
                         EndTurn();
@@ -252,8 +291,8 @@ public class Player extends Mob
                     }
                 }
             }
-            else if (upEnemy != null){
-                if(Greenfoot.isKeyDown("w")) {
+            else if (upEnemyTrue){
+                if(keypressed.equals("w")) {
                     upEnemy.takeDamage(Attack, upEnemy);
                     EndTurn();
                 }
@@ -286,8 +325,8 @@ public class Player extends Mob
             newLevel(counter, currentworld, progressiveDifficulty);          
 
         }
-
     }
+
     // The integer 'progressiveDifficulty' allows the game to continually become more difficult as the player progresses throughout the game.
     // This method (below) uses the integer to create a new level where the enemies are slightly stronger than the previous level.
     // This is using OOP structure to minimize code, thereby making the code efficient.
