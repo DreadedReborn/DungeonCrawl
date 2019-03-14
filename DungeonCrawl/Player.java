@@ -177,8 +177,8 @@ public class Player extends Mob
 
         //Actor Enemy = getNeighbours(1, false, Skeleton.class).get(0);
 
-        if (leftCollide==null){ //trigger function
-            if (leftEnemy==null){
+        if (leftCollide == null){ //trigger function
+            if (leftEnemy == null){
                 if (Greenfoot.isKeyDown("a")) {//another trigger function
                     if (leftChest != null){
                         openChest(leftChest);
@@ -190,16 +190,16 @@ public class Player extends Mob
                     }
                 } 
             } 
-            else if (leftEnemy!=null){
+            else if (leftEnemy != null){
                 if (Greenfoot.isKeyDown("a")){
                     leftEnemy.takeDamage(Attack, leftEnemy);
                     EndTurn();
                 }
             }
         } 
-        if (downCollide==null){
-            if (hotbar==null){
-                if (downEnemy==null){
+        if (downCollide == null){
+            if (hotbar == null){
+                if (downEnemy == null){
                     if (Greenfoot.isKeyDown("s")) {
                         if (downChest != null){
                             openChest(downChest);
@@ -211,7 +211,7 @@ public class Player extends Mob
                         }
                     } 
                 } 
-                else if (downEnemy!=null){
+                else if (downEnemy != null){
                     if (Greenfoot.isKeyDown("s")) {
                         downEnemy.takeDamage(Attack, downEnemy);
                         EndTurn();
@@ -232,15 +232,15 @@ public class Player extends Mob
                     }
                 } 
             }
-            else if (rightEnemy!=null){
+            else if (rightEnemy != null){
                 if(Greenfoot.isKeyDown("d")) {
                     rightEnemy.takeDamage(Attack, rightEnemy);
                     EndTurn();
                 }
             }
         }
-        if (upCollide==null){
-            if (upEnemy==null){
+        if (upCollide == null){
+            if (upEnemy == null){
                 if(Greenfoot.isKeyDown("w")) {
                     if (upChest != null){
                         openChest(upChest);
@@ -252,7 +252,7 @@ public class Player extends Mob
                     }
                 }
             }
-            else if (upEnemy!=null){
+            else if (upEnemy != null){
                 if(Greenfoot.isKeyDown("w")) {
                     upEnemy.takeDamage(Attack, upEnemy);
                     EndTurn();
@@ -261,7 +261,7 @@ public class Player extends Mob
 
         }
         if (collideOnce != null){
-            if (counter !=null){
+            if (counter != null){
 
                 counter.addScore(5);
                 getWorld().removeObject(collideOnce);

@@ -174,6 +174,7 @@ public class TestWorld extends ActiveWorld
         }
 
     }
+
     /**
      * Used in method generateWorld.
      * Creates stair, and clears walls from the 4 cardinal directions.
@@ -191,7 +192,7 @@ public class TestWorld extends ActiveWorld
         if (getObjectsAt(x, y + 1, Wall.class).size() != 0){removeObject(getObjectsAt(x, y + 1, Wall.class).get(0));
             addObject(new Floor(), x, y + 1);}
         //} catch(Exception e){} 
->>>>>>> dev
+
     }
 
     /**
@@ -281,13 +282,13 @@ public class TestWorld extends ActiveWorld
             addObject(new PaladinChest(), wallX[x], wallY[y]);
 
         } 
-        else if (Greenfoot.getRandomNumber(100)<80)
+        else if (Greenfoot.getRandomNumber(100)>80)
         {
             addObject(new SteelChest(), wallX[x], wallY[y]);
         }
-        addObject(new Lich(), wallX[x], wallY[y]);
-=======
-        }
+        //addObject(new Lich(), wallX[x], wallY[y]);
+
+        //}
         if (!bossSpawned){
             if (Greenfoot.getRandomNumber(40)<20){
                 addObject(new Lich(), wallX[x], wallY[y]);
@@ -301,7 +302,7 @@ public class TestWorld extends ActiveWorld
                 bossSpawned = true;
             }
         }
->>>>>>> dev
+
         bossLevel = true;
     }
 
