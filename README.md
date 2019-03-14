@@ -8,7 +8,7 @@ This game intends to show the capabilities of Greenfoot in terms of creating a r
 
 
 ## Can I fork the repository to make my own game?
-Yes, but only if the game you create is also completely free. I created this as a simple project, and would not appreciate it if I found it on an online marketplace for £2.99.
+Yes, but only if the game you create is also completely free. I created this as a simple project, and would appreciate if you respected the license.
  
  
  ## I found a bug in your game. Where should I report it?
