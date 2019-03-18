@@ -16,7 +16,7 @@ public class HelpWorld extends World
     public HelpWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(9, 9, 50); 
+        super(9, 11, 50); 
         prepare();
     }
 

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class EndWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author PC
+ * @version placeholder
  */
 public class EndWorld extends ActiveWorld
 {
@@ -16,7 +16,7 @@ public class EndWorld extends ActiveWorld
     public EndWorld()
     {    
         // Create a new world with 10x10 cells with a cell size of 50x50 pixels.
-        super(10, 10, 50); 
+        super(9, 11, 50); 
         prepare();
     }
 
