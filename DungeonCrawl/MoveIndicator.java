@@ -19,21 +19,24 @@ public class MoveIndicator extends UI
     {
         //setImage(gifimage.getCurrentImage());
         trackPlayer();
+        /*
         while ( timer >= 0){
-            if (timer == 0)
-            {
-                if (this != null){
-                    fadeOut();
-                }
-            }
-            else {
-                timer--;
-            }
+        if (timer == 0)
+        {
+        if (this != null){
+        fadeOut();
         }
+        }
+        else {
+        timer--;
+        }
+        }
+         */
     }    
 
     /**
      * Slowly turns the UI element into a completely invisible state, and then deletes it.
+     * Non-functional, and should not be used until fixed.
      */
     private void fadeOut()
     {
