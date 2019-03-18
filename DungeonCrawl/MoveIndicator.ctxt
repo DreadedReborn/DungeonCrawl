@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MoveIndicator
+comment0.text=\r\n\ MoveIndicator\ is\ a\ UI\ element\ that\ appears\ at\ the\ start\ of\ a\ new\ game.\ It\ will\ appear\ over\ the\ player\ character,\ and\ slowly\ fade\ over\ time.\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ tutorialising\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ IngameMovementTutorial\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ fadeOut()
+comment2.text=\r\n\ Slowly\ turns\ the\ UI\ element\ into\ a\ completely\ invisible\ state,\ and\ then\ deletes\ it.\r\n\ Non-functional,\ and\ should\ not\ be\ used\ until\ fixed.\r\n
+comment3.params=
+comment3.target=void\ trackPlayer()
+comment3.text=\r\n\ Keeps\ the\ UI\ element\ over\ the\ Player\ for\ the\ duration\ of\ it's\ existence.\r\n
+numComments=4

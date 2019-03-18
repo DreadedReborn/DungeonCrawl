@@ -40,6 +40,7 @@ public abstract class Equipment extends Obj
                         value = 7;
                         getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornweapon);
                         ((Player)getWorld().getObjects(Player.class).get(0)).wornweapon = (Weapon)this;
+                        
                         this.isEquipped = true;
                     }
                     else{recycleWorseEquipment((Weapon)this);}
@@ -143,6 +144,7 @@ public abstract class Equipment extends Obj
                         plrAttack = plrAttack + Attack;
                         ((Player)getWorld().getObjects(Player.class).get(0)).Attack = plrAttack; //Finds the first instance of 'Player' in the world.
                         ((Player)getWorld().getObjects(Player.class).get(0)).oldAttack = Attack;
+                        ((Player)getWorld().getObjects(Player.class).get(0)).newWeapon = true;
                     }
                     //=========================ARMOR=========================
                     else if (isWeapon == 1){
