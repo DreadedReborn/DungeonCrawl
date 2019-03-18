@@ -134,7 +134,9 @@ public class Player extends Mob
                 }
             }
         }
-        changeAnimation();
+        if (newWeapon){
+            changeAnimation();
+        }
         setImage(gifImage.getCurrentImage());
         checkWin();
     }
@@ -545,14 +547,17 @@ public class Player extends Mob
             if (wornweapon instanceof Sword)
             {
                 gifImage = new GifImage("man01sword.gif");
+                newWeapon = false;
             }
             else if (wornweapon instanceof Knife)
             {
                 gifImage = new GifImage("man01knife.gif");
+                newWeapon = false;
             }
             else if (wornweapon instanceof GreatAxe)
             {
                 gifImage = new GifImage("man01greataxe.gif");
+                newWeapon = false;
             }
         }
     }

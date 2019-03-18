@@ -9,19 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MoveIndicator extends UI
 {
     //private int timer = 50;
-    
-    GifImage gifimage = new GifImage("movementvisuals.gif");
+
+    //GifImage gifimage = new GifImage("movementvisuals.gif");
     /**
      * Act - do whatever the IngameMovementTutorial wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        setImage(gifimage.getCurrentImage());
+        //setImage(gifimage.getCurrentImage());
         trackPlayer();
-        for (int timer = 150; timer <= 0; timer--){
-            fadeOut();
-        }
+        //for (int timer = 150; timer <= 0; timer--){
+        fadeOut();
+        //}
     }    
 
     /**
@@ -29,14 +29,14 @@ public class MoveIndicator extends UI
      */
     private void fadeOut()
     {
-        int x;
-        GreenfootImage image = gifimage.getCurrentImage();
-
-        for (x = 255; x <= 0; x--)
+        int fadetimer = 255;
+        GreenfootImage image = getImage();
+        while (fadetimer > 0)
         {
-            image.setTransparency(x);
+            image.setTransparency(fadetimer);
+            fadetimer--;
         }
-        if (x == 0)
+        if (fadetimer == 0)
         {
             getWorld().removeObject(this);
         }
