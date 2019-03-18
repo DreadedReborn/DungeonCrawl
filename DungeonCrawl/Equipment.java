@@ -40,6 +40,7 @@ public abstract class Equipment extends Obj
                         value = 7;
                         getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornweapon);
                         ((Player)getWorld().getObjects(Player.class).get(0)).wornweapon = (Weapon)this;
+                        ((Player)getWorld().getObjects(Player.class).get(0)).newWeapon = true;
                         this.isEquipped = true;
                     }
                     else{recycleWorseEquipment((Weapon)this);}
