@@ -53,7 +53,7 @@ public class TestWorld extends ActiveWorld
         // Create a new world with 9x11 cells with a cell size of 50x50 pixels.
         super(9, 11, 50); 
         //Makes sure you can always see important classes.
-        setPaintOrder(HitEffect.class, Player.class, Counter.class, Lich.class, Skeleton.class, Gold.class, Stairs.class, HealthPotion.class, SmallHealthPotion.class, Chest.class, Wall.class, DoorClosed.class);
+        setPaintOrder(HitEffect.class, Player.class, Counter.class, Wall.class, MoveIndicator.class, Lich.class, Skeleton.class, Gold.class, Stairs.class, HealthPotion.class, SmallHealthPotion.class, Chest.class,  DoorClosed.class);
         playerInWorld = playerAlreadyhere; //Boolean for checking if this world was made by a player and stairs or not.
         nextscore = prevscore; //Translates previous score from old level to new counter.
         counter = new Counter("Gold: ");
@@ -63,6 +63,9 @@ public class TestWorld extends ActiveWorld
         addObject(healthbar, 2 ,9);
         difficultybar = new Counter("Floor: "); 
         addObject(difficultybar, 4, 9);
+        if (!playerAlreadyhere){
+            addObject(new MoveIndicator(), 6, 6);
+        }
         prepare(progressiveDifficulty);
 
     }
