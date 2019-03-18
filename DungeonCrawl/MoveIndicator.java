@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MoveIndicator extends UI
 {
-    //private int timer = 50;
+    private int timer = 150;
 
     //GifImage gifimage = new GifImage("movementvisuals.gif");
     /**
@@ -19,9 +19,17 @@ public class MoveIndicator extends UI
     {
         //setImage(gifimage.getCurrentImage());
         trackPlayer();
-        //for (int timer = 150; timer <= 0; timer--){
-        fadeOut();
-        //}
+        while ( timer >= 0){
+            if (timer == 0)
+            {
+                if (this != null){
+                    fadeOut();
+                }
+            }
+            else {
+                timer--;
+            }
+        }
     }    
 
     /**
@@ -29,16 +37,20 @@ public class MoveIndicator extends UI
      */
     private void fadeOut()
     {
-        int fadetimer = 255;
+        //int fadetimer = 255;
         GreenfootImage image = getImage();
-        while (fadetimer > 0)
+        while (image.getTransparency() > 0)
         {
-            image.setTransparency(fadetimer);
-            fadetimer--;
+            image.setTransparency(image.getTransparency()-1);
+            //fadetimer = image.getTransparency();
+            // fadetimer--;
+
         }
-        if (fadetimer == 0)
-        {
-            getWorld().removeObject(this);
+        if (this != null){
+            if (image.getTransparency() == 0)
+            {
+                getWorld().removeObject(this);
+            }
         }
     }
 
