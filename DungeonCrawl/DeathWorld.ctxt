@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DeathWorld
+comment0.text=\r\n\ The\ end\ world,\ but\ you\ are\ dead\ and\ did\ not\ win.\r\n\ \r\n\ @author\ PC\r\n\ @version\ die\r\n
+comment1.params=
+comment1.target=DeathWorld()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DeathWorld.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+numComments=3

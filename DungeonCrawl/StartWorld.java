@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartWorld extends ActiveWorld
 {    
+     
     /**
      * Constructor for objects of class StartWorld.
      * 
@@ -15,10 +16,16 @@ public class StartWorld extends ActiveWorld
     public StartWorld()
     {    
         // Create a new world with 11x11 cells with a cell size of 50x50 pixels.
+
         super(9, 11, 50); 
+
         prepare();
         setPaintOrder(ButtonHelp.class, ButtonStart.class, DoorClosed.class, DoorOpened.class);
+        GreenfootSound musicloop = new GreenfootSound("crowdhammer.mp3");
+        musicloop.playLoop();
+        musicloop.setVolume(40);
     }
+
 
     /**
      * Prepare the world for the start of the program.

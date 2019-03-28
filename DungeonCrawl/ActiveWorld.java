@@ -11,7 +11,7 @@ public abstract class ActiveWorld extends World
     public Counter goldcounter;
     private Actor skeleton;
     //public 
-    
+    public GreenfootSound musicloop = new GreenfootSound("crowdhammer.mp3");
     /**
      * Constructor for objects of class ActiveWorld.
      * 
@@ -34,4 +34,5 @@ public abstract class ActiveWorld extends World
     {
         return skeleton;
     }
+   
 }

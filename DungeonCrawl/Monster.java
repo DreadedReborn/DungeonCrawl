@@ -15,6 +15,14 @@ public abstract class Monster extends Mob
     public boolean takingDamage;
     public boolean isBoss;
 
+    public GreenfootSound footstep = new GreenfootSound("step.mp3");
+    //GreenfootSound pickUp =  new GreenfootSound("");
+    //GreenfootSound Gold = new GreenfootSound(".mp4");
+    //GreenfootSound openChest = new GreenfootSound("");
+    public GreenfootSound attack = new GreenfootSound("enemy_attack.mp3");
+    public GreenfootSound hurt = new GreenfootSound("enemy_hurt.mp3");
+    public GreenfootSound die = new GreenfootSound("death2.mp3");
+
     private int health;
     private int defense;
     /**
@@ -60,6 +68,7 @@ public abstract class Monster extends Mob
             }
             else {
                 health = health - ( dmg - defense);
+                hurt.play();
             }
             getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
 
@@ -74,6 +83,7 @@ public abstract class Monster extends Mob
                 }
                 else {
                     health = health - ( dmg - defense);
+                    hurt.play();
                 }
                 getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
 
@@ -89,6 +99,7 @@ public abstract class Monster extends Mob
                         }
                         else {
                             health = health - ( dmg - defense);
+                           hurt.play();
                         }
                         getWorld().addObject(new HitEffect(Integer.toString(dmg)), getX(), getY());
 
@@ -116,6 +127,7 @@ public abstract class Monster extends Mob
             }
             else {
                 eHealth = eHealth - ( dmg - eDefense);
+                hurt.play();
             }
             //GifImage gifimage = new GifImage(damagedEnemy);
             //setImage(gifimage.getCurrentImage());]
@@ -129,6 +141,7 @@ public abstract class Monster extends Mob
                 {
                     getWorld().addObject(new Gold(), getX(), getY());
                 }
+                die.play();
                 getWorld().removeObject(this);
             }
         }
@@ -173,6 +186,7 @@ public abstract class Monster extends Mob
                         if (Greenfoot.getRandomNumber(100)<40) {//another trigger function
                             {
                                 setLocation(getX() - d, getY()); //event handler
+                                footstep.play();
                                 HasMovedAlready = true;
                             }
                         } 
@@ -193,6 +207,7 @@ public abstract class Monster extends Mob
                     if (rightChest==null){
                         if(Greenfoot.getRandomNumber(100)<40) {
                             setLocation(getX() + d,getY());
+                            footstep.play();
                             HasMovedAlready = true;
                         } 
                     }
@@ -212,6 +227,7 @@ public abstract class Monster extends Mob
                         if (downChest == null){
                             if (Greenfoot.getRandomNumber(100)<40) {
                                 setLocation(getX(),getY() + d);
+                                footstep.play();
                                 HasMovedAlready = true;
                             } 
                         } 
@@ -231,6 +247,7 @@ public abstract class Monster extends Mob
                     if (upChest==null){
                         if(Greenfoot.getRandomNumber(100)<40) {
                             setLocation(getX(),getY() - d);
+                            footstep.play();
                             HasMovedAlready = true;
                         }
                     }

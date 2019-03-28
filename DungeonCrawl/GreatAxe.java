@@ -14,7 +14,7 @@ public class GreatAxe extends Weapon
     
     public GreatAxe()
     {
-        attack = 10;
+        attack = 14;
     }
 
     /**

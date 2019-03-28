@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*; //Imports java's utility library.
+//import greenfoot.greenfootSound.*; //Imports greenfootsound.
 
 /**
  * The Player class represents the player's character in the world.
@@ -12,6 +13,14 @@ public class Player extends Mob
 {
     private World currentworld = getWorld();
     private TestWorld gameWorld = (TestWorld) getWorld();
+
+    GreenfootSound footstep = new GreenfootSound("step.mp3");
+    GreenfootSound pickUp =  new GreenfootSound("player_pickup.mp3");
+    GreenfootSound pickUpGold = new GreenfootSound("player_gold.mp3");
+    GreenfootSound openChestSound = new GreenfootSound("player_chest.mp3");
+    GreenfootSound attack = new GreenfootSound("player_attack.mp3");
+    GreenfootSound hurt = new GreenfootSound("player_hurt.mp3");
+    GreenfootSound die = new GreenfootSound("player_die.mp3");
 
     public int Health = 50;
     public int MaxHealth = 50;
@@ -84,7 +93,6 @@ public class Player extends Mob
         }
 
     }
-
     /**
      * ActOnTurn -An adjustment of the Act method, this method is only called when the player engages a turn by any means.
      * This will normally be called by a method in a world class.
@@ -139,6 +147,12 @@ public class Player extends Mob
         }
         setImage(gifImage.getCurrentImage());
         checkWin();
+
+        footstep.setVolume(70);
+        pickUp.setVolume(90);
+        pickUpGold.setVolume(30);
+        openChestSound.setVolume(80);
+        attack.setVolume(75);
     }
 
     /**
@@ -228,10 +242,12 @@ public class Player extends Mob
                 if (keypressed.equals("a")) {//another trigger function
                     if (leftChest != null){
                         openChest(leftChest);
+
                         EndTurn();
                     }
                     else {
                         setLocation(getX() - d, getY()); //event handler
+                        footstep.play();
                         EndTurn();
                     }
                 } 
@@ -251,10 +267,12 @@ public class Player extends Mob
                     if (keypressed.equals("s")) {
                         if (downChest != null){
                             openChest(downChest);
+
                             EndTurn();
                         }
                         else {
                             setLocation(getX(),getY() + d);
+                            footstep.play();
                             EndTurn();
                         }
                     }
@@ -266,10 +284,12 @@ public class Player extends Mob
                 if(keypressed.equals("d")) {
                     if (rightChest != null){
                         openChest(rightChest);
+
                         EndTurn();
                     }
                     else {
                         setLocation(getX() + d,getY());
+                        footstep.play();
                         EndTurn();
                     }
                 } 
@@ -286,10 +306,12 @@ public class Player extends Mob
                 if(keypressed.equals("w")) {
                     if (upChest != null){
                         openChest(upChest);
+
                         EndTurn();
                     }
                     else {
                         setLocation(getX(),getY() - d);
+                        footstep.play();
                         EndTurn();
                     }
                 }
@@ -304,7 +326,7 @@ public class Player extends Mob
         }
         if (collideOnce != null){
             if (counter != null){
-
+                pickUpGold.play();
                 counter.addScore(5);
                 getWorld().removeObject(collideOnce);
                 //boolean findgold = false;
@@ -444,6 +466,7 @@ public class Player extends Mob
     public void openChest(Chest chest)
     {
         chest.openChest();
+        openChestSound.play();
     }
 
     /**
@@ -458,6 +481,7 @@ public class Player extends Mob
         {
             getWorld().removeObject(door);
             getWorld().addObject(door2, getX(), getY());
+            // Greenfoot.playSound("death2.mp3");
         }
     }
 
@@ -477,12 +501,14 @@ public class Player extends Mob
         TestWorld gameWorld = (TestWorld) getWorld();
         Counter healthbar = gameWorld.getHealthBar();
         healthbar.addScore(-x);
+        hurt.play();
         getWorld().addObject(new HitEffect(Integer.toString(x)), getX(), getY());
         if (Health <= 0)
         {
             getWorld().removeObject(this);
-            World gameOver = new EndWorld();
+            World gameOver = new DeathWorld();
             Greenfoot.setWorld(gameOver);
+            die.play();
         }
     }
 

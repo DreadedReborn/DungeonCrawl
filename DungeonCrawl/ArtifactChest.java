@@ -20,18 +20,18 @@ public class ArtifactChest extends Chest
     public void generateArtifactLoot()
     {
         if (isOpen) {
-            if (Greenfoot.getRandomNumber(100) <=30)
+            if (Greenfoot.getRandomNumber(100) <=50)
             {
                 getWorld().addObject(new ArtifactArmor1(), getX(), getY());
             }
-            else if (Greenfoot.getRandomNumber(100) <=30)
+            else //if (Greenfoot.getRandomNumber(100) <=30)
             {
                 getWorld().addObject(new ArtifactWeapon1(), getX(), getY());
             }
-            else 
-            {
+            // else 
+            // {
                 
-            }
+            // }
             getWorld().removeObject(this);
         }
     }

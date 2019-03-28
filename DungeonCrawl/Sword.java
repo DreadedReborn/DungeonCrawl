@@ -12,7 +12,7 @@ public class Sword extends Weapon
     public int defense = 0;
     public Sword()
     {
-        attack = 8;
+        attack = 10;
     }
 
     /**

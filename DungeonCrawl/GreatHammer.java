@@ -15,7 +15,7 @@ public class GreatHammer extends Weapon
 
     public GreatHammer()
     {
-        attack = 13;
+        attack = 18;
     }
 
     /**

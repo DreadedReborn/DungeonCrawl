@@ -10,14 +10,14 @@ public class MoveIndicator extends UI
 {
     private int timer = 150;
 
-    //GifImage gifimage = new GifImage("movementvisuals.gif");
+    GifImage gifimage = new GifImage("movementvisuals.gif");
     /**
      * Act - do whatever the IngameMovementTutorial wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        //setImage(gifimage.getCurrentImage());
+        setImage(gifimage.getCurrentImage());
         trackPlayer();
         /*
         while ( timer >= 0){

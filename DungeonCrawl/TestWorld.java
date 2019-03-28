@@ -69,6 +69,14 @@ public class TestWorld extends ActiveWorld
         prepare(progressiveDifficulty);
 
     }
+    
+    public void musicLooping()
+    {
+        if (!musicloop.isPlaying() )
+        {
+            musicloop.play();
+        }
+    }
     /*
     private void generateArrays()
     {   
@@ -242,7 +250,7 @@ public class TestWorld extends ActiveWorld
         }
         else if (Greenfoot.getRandomNumber(100)<10)
         {
-            addObject(new Skeleton(Greenfoot.getRandomNumber(10) + progressiveDifficulty,Greenfoot.getRandomNumber(3) + progressiveDifficulty,Greenfoot.getRandomNumber(3) + progressiveDifficulty), wallX[x], wallY[y]);
+            addObject(new Skeleton(Greenfoot.getRandomNumber(5) + progressiveDifficulty,Greenfoot.getRandomNumber(3) + progressiveDifficulty,progressiveDifficulty), wallX[x], wallY[y]);
         }
         else if (Greenfoot.getRandomNumber(100)<10)
         {
@@ -424,6 +432,7 @@ public class TestWorld extends ActiveWorld
                 getObjects(Lich.class).get(0).setTurnActive(true);
             }
         }
+        musicLooping();
     }
 
     //public void act()

@@ -15,7 +15,7 @@ public class PaladinSword extends Weapon
     public PaladinSword()
     {
         gifimage = new GifImage("paladinsword.gif");
-        attack = 20;
+        attack = 22;
     }
 
     /**

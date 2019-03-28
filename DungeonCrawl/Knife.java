@@ -9,8 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Knife extends Weapon
 {
     public int isWeapon = 0;
-    public int attack = 4;
     public int defense = 0;
+    public Knife()
+    {
+        attack = 6;
+    }
+
     /**
      * Act - do whatever the Knife wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,6 +22,6 @@ public class Knife extends Weapon
     public void act() 
     {
         pickUpEquipment(isWeapon);
-       if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
+        if (isEquipped){updateStats(attack, defense, findOldAttack(), findOldDefense(), isWeapon, isArtifact);}
     }    
 }

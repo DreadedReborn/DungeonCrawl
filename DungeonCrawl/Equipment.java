@@ -40,7 +40,7 @@ public abstract class Equipment extends Obj
                         value = 7;
                         getWorld().removeObject(((Player)getWorld().getObjects(Player.class).get(0)).wornweapon);
                         ((Player)getWorld().getObjects(Player.class).get(0)).wornweapon = (Weapon)this;
-                        
+
                         this.isEquipped = true;
                     }
                     else{recycleWorseEquipment((Weapon)this);}
@@ -70,6 +70,7 @@ public abstract class Equipment extends Obj
             }
             if (value != 0){
                 setLocation(value, 10);
+
             }
         }
     }
@@ -162,6 +163,7 @@ public abstract class Equipment extends Obj
                         ((Player)getWorld().getObjects(Player.class).get(0)).isCursed = true;
                     }
                     statsUpdated = true;
+
                 }
             }
         }
@@ -169,7 +171,10 @@ public abstract class Equipment extends Obj
 
     public int findOldAttack()
     {
+        //try {
         return ((Player)getWorld().getObjects(Player.class).get(0)).oldAttack; 
+        // }
+        // catch (Exception e){}
     }
 
     public int findOldDefense()

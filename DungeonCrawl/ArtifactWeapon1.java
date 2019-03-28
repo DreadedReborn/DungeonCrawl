@@ -14,7 +14,7 @@ public class ArtifactWeapon1 extends Weapon
     public ArtifactWeapon1()
     {
         isArtifact = true;
-        attack = 10;
+        attack = 30;
     }
     /**
      * Act - do whatever the ArtifactWeapon1 wants to do. This method is called whenever
