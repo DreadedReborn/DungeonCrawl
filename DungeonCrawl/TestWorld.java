@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Debug area to make stuff work.
  * 
  * @author PC
- * @version procedural-and-persistent
+ * @version Shop Update
  */
 public class TestWorld extends ActiveWorld
 {
@@ -63,20 +63,16 @@ public class TestWorld extends ActiveWorld
         addObject(healthbar, 2 ,9);
         difficultybar = new Counter("Floor: "); 
         addObject(difficultybar, 4, 9);
+        Music music = new Music();
+        addObject(music, 1,1);
         if (!playerAlreadyhere){
             addObject(new MoveIndicator(), 6, 6);
         }
         prepare(progressiveDifficulty);
 
     }
-    
-    public void musicLooping()
-    {
-        if (!musicloop.isPlaying() )
-        {
-            musicloop.play();
-        }
-    }
+
+
     /*
     private void generateArrays()
     {   
@@ -432,7 +428,7 @@ public class TestWorld extends ActiveWorld
                 getObjects(Lich.class).get(0).setTurnActive(true);
             }
         }
-        musicLooping();
+        //musicLooping();
     }
 
     //public void act()

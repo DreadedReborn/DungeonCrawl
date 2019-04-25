@@ -17,9 +17,15 @@ public class DeathWorld extends ActiveWorld
     {
         super(9, 11, 50); 
         prepare();
-        musicloop.stop();
-        Greenfoot.playSound("lose.mp3");
+        // //musicloop.stop();
+        // Greenfoot.playSound("lose.mp3");
     }
+    /*
+    public void act()
+    {
+    musicAct();
+    }
+     */
 
     /**
      * Prepare the world for the start of the program.

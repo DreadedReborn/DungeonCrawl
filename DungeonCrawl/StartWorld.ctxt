@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=StartWorld
-comment0.text=\r\n\ World\ that\ is\ displayed\ at\ the\ start\ of\ the\ game.\r\n\ \r\n\ @author\ PC\r\n\ @version\ \ beginning\ of\ the\ end\r\n
+comment0.text=\r\n\ World\ that\ is\ displayed\ at\ the\ start\ of\ the\ game.\r\n\ \r\n\ @author\ PC\r\n\ @version\ Shop\ Update\r\n
 comment1.params=
 comment1.target=StartWorld()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StartWorld.\r\n\ \r\n

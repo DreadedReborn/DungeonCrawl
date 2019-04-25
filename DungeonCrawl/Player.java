@@ -7,7 +7,7 @@ import java.util.*; //Imports java's utility library.
  * It is the primary method in which the player interacts with the world.
  * 
  * @author PC
- * @version 2
+ * @version Shop Update
  */
 public class Player extends Mob
 {
@@ -62,6 +62,8 @@ public class Player extends Mob
     private boolean upEnemyTrue;
     private boolean downEnemyTrue;
 
+    //====================================================================================================
+
     public boolean isCursed = false;
     private boolean loadHealth = true;
     private boolean hasMoved = false;
@@ -91,8 +93,8 @@ public class Player extends Mob
             loadHealth = false;
             progressiveDifficulty = 2;
         }
-
     }
+
     /**
      * ActOnTurn -An adjustment of the Act method, this method is only called when the player engages a turn by any means.
      * This will normally be called by a method in a world class.
@@ -148,11 +150,12 @@ public class Player extends Mob
         setImage(gifImage.getCurrentImage());
         checkWin();
 
-        footstep.setVolume(70);
-        pickUp.setVolume(90);
-        pickUpGold.setVolume(30);
-        openChestSound.setVolume(80);
-        attack.setVolume(75);
+        footstep.setVolume(20);
+        pickUp.setVolume(80);
+        pickUpGold.setVolume(20);
+        openChestSound.setVolume(50);
+        attack.setVolume(50);
+        //musicAct();
     }
 
     /**
@@ -344,6 +347,12 @@ public class Player extends Mob
                 //}
             }
         }
+        
+        if (keypressed.equals("m"))
+        {
+            Music music = getWorld().getObjects(Music.class).get(0);
+            music.checkToggle();
+        }
 
         if (nextFloor != null){
             progressiveDifficulty++;
@@ -351,6 +360,41 @@ public class Player extends Mob
 
         }
     }
+    /*
+    /**
+     * Gives the player the control to toggle music on/off.
+     * Uses method toggleMusic.
+
+    public void musicAct()
+    {
+    String musicKeyPressed = Greenfoot.getKey();
+    if (musicKeyPressed == "m")
+    {
+    toggleMusic();
+    }
+    }
+     */
+    /*
+
+    /**
+     * Allows the music to be toggled on/off when called, based on boolean musicToggle.
+     * See method musicAct for use.
+    //
+    public void toggleMusic()
+    {
+    GreenfootSound musicloop = gameWorld.getCurrentMusic();
+    Boolean musicToggle = gameWorld.getMusicToggle();
+    if (musicToggle){
+    musicloop.playLoop();
+    musicToggle = false;
+    }
+    else {
+    musicloop.pause();
+    musicToggle = true;
+    }
+
+    }
+     */
 
     // The integer 'progressiveDifficulty' allows the game to continually become more difficult as the player progresses throughout the game.
     // This method (below) uses the integer to create a new level where the enemies are slightly stronger than the previous level.

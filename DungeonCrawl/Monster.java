@@ -15,7 +15,7 @@ public abstract class Monster extends Mob
     public boolean takingDamage;
     public boolean isBoss;
 
-    public GreenfootSound footstep = new GreenfootSound("step.mp3");
+    //public GreenfootSound footstep = new GreenfootSound("step.mp3");
     //GreenfootSound pickUp =  new GreenfootSound("");
     //GreenfootSound Gold = new GreenfootSound(".mp4");
     //GreenfootSound openChest = new GreenfootSound("");
@@ -25,6 +25,12 @@ public abstract class Monster extends Mob
 
     private int health;
     private int defense;
+    public void Skeleton()
+    {
+        attack.setVolume(30);
+        hurt.setVolume(45);
+        die.setVolume(55);
+    }
     /**
      * Opens doors on the same tile as player.
      */
@@ -186,7 +192,7 @@ public abstract class Monster extends Mob
                         if (Greenfoot.getRandomNumber(100)<40) {//another trigger function
                             {
                                 setLocation(getX() - d, getY()); //event handler
-                                footstep.play();
+                                //footstep.play();
                                 HasMovedAlready = true;
                             }
                         } 
@@ -207,7 +213,7 @@ public abstract class Monster extends Mob
                     if (rightChest==null){
                         if(Greenfoot.getRandomNumber(100)<40) {
                             setLocation(getX() + d,getY());
-                            footstep.play();
+                            //footstep.play();
                             HasMovedAlready = true;
                         } 
                     }
@@ -227,7 +233,7 @@ public abstract class Monster extends Mob
                         if (downChest == null){
                             if (Greenfoot.getRandomNumber(100)<40) {
                                 setLocation(getX(),getY() + d);
-                                footstep.play();
+                                //footstep.play();
                                 HasMovedAlready = true;
                             } 
                         } 
@@ -247,7 +253,7 @@ public abstract class Monster extends Mob
                     if (upChest==null){
                         if(Greenfoot.getRandomNumber(100)<40) {
                             setLocation(getX(),getY() - d);
-                            footstep.play();
+                            //footstep.play();
                             HasMovedAlready = true;
                         }
                     }

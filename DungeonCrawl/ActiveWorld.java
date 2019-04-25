@@ -4,14 +4,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Holds the methods that all World subclasses may need and use.
  * 
  * @author PC
- * @version scream
+ * @version Shop Update
  */
 public abstract class ActiveWorld extends World
 {
     public Counter goldcounter;
     private Actor skeleton;
     //public 
-    public GreenfootSound musicloop = new GreenfootSound("crowdhammer.mp3");
+
     /**
      * Constructor for objects of class ActiveWorld.
      * 
@@ -26,13 +26,27 @@ public abstract class ActiveWorld extends World
     {
         return goldcounter;
     }
+    /*
+    public GreenfootSound getCurrentMusic()
+    {
+    return musicloop;
+    }
+     */
+    /*
+    public Boolean getMusicToggle()
+    {
+    return musicToggle;
+    }
+     */
+
     
     public void newFloor()
     {
     }
+
     public Actor getskeleton()
     {
         return skeleton;
     }
-   
+
 }

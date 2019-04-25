@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Player
-comment0.text=\r\n\ The\ Player\ class\ represents\ the\ player's\ character\ in\ the\ world.\r\n\ It\ is\ the\ primary\ method\ in\ which\ the\ player\ interacts\ with\ the\ world.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 2\r\n
+comment0.text=\r\n\ The\ Player\ class\ represents\ the\ player's\ character\ in\ the\ world.\r\n\ It\ is\ the\ primary\ method\ in\ which\ the\ player\ interacts\ with\ the\ world.\r\n\ \r\n\ @author\ PC\r\n\ @version\ Shop\ Update\r\n
 comment1.params=
 comment1.target=void\ Player()
 comment10.params=
