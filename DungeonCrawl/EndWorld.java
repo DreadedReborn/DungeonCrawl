@@ -39,5 +39,7 @@ public class EndWorld extends ActiveWorld
         ButtonStart startbutton = new ButtonStart();
         addObject(startbutton,5,7);
         startbutton.setLocation(5,7);
+        Music music = new Music(true);
+        addObject(music,1,1);
     }
 }

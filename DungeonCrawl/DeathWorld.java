@@ -37,6 +37,8 @@ public class DeathWorld extends ActiveWorld
         addObject(notwinscreen,4,3);
         ButtonStart startbutton = new ButtonStart();
         addObject(startbutton,4,8);
+        Music music = new Music(true);
+        addObject(music,1,1);
 
     }
 }

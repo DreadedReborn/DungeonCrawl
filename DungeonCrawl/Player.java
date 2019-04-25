@@ -347,7 +347,7 @@ public class Player extends Mob
                 //}
             }
         }
-        
+
         if (keypressed.equals("m"))
         {
             Music music = getWorld().getObjects(Music.class).get(0);
@@ -410,6 +410,9 @@ public class Player extends Mob
         World nextLevel = new TestWorld(true, counter.getscore(), healthbar.getscore(), progressiveDifficulty);
         nextLevel.addObject(this, 4, 5);
         newLevelInventoryTransfer(nextLevel);
+        Music music = getWorld().getObjects(Music.class).get(0);
+        Music music2 = new Music(music.getToggle());
+        // music.getToggle();
         Greenfoot.setWorld(nextLevel);
     }
 
@@ -520,7 +523,7 @@ public class Player extends Mob
     {
         Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
 
-        DoorOpened door2 = new DoorOpened();
+        DoorOpened door2 = new DoorOpened(door.getDifficulty());
         if (door != null)
         {
             getWorld().removeObject(door);

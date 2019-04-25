@@ -12,10 +12,18 @@ public class Music extends UI
 
     //Music.
     public GreenfootSound musicloop = new GreenfootSound("crowdhammer.mp3");
-    public Boolean musicToggle = true;
+    public Boolean musicToggle;
 
     public Boolean musicStarted = false;
 
+    public Music(boolean musicLastToggled)
+    {
+        musicToggle = musicLastToggled;
+    }
+    // public void Music()
+    // {
+    // musicToggle = true;
+    // }
     /**
      * Act - do whatever the Music wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -45,6 +53,11 @@ public class Music extends UI
         }
         // }
         // }
+    }
+
+    public boolean getToggle()
+    {
+        return musicToggle;
     }
 
     /**
@@ -118,9 +131,11 @@ public class Music extends UI
     {
         if (!musicloop.isPlaying() )
         {
-            if (musicToggle)
-            {
-                musicloop.playLoop();
+            if (!musicStarted){
+                if (musicToggle)
+                {
+                    musicloop.playLoop();
+                }
             }
         }
     }

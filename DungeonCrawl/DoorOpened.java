@@ -1,14 +1,40 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DoorOpened here.
+ * An opened door. Is purely visual, and closes itself after a certain period of time.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author PC 
+ * @version Shop Update
  */
 public class DoorOpened extends Turf
 {
-    
+    // private TestWorld currentWorld = (TestWorld)getWorld();
+    public DoorOpened(int difficultylevel)
+    {
+        // if (getWorld() instanceof ActiveWorld)
+        // {
+            // // ActiveWorld currentWorld = 
+            // int difficultylevel = currentWorld.getDifficulty();
+            if (difficultylevel == 1)
+            {
+                // GreenfootImage wallOne = new GreenfootImage("Door_Open.png");
+                this.setImage(new GreenfootImage("Door_Open.png"));
+            }
+            else if (difficultylevel == 2)
+            {
+                // GreenfootImage wallTwo = new GreenfootImage("Door_Open2.png");
+                this.setImage(new GreenfootImage("Door_Open2.png"));
+            }
+            else if (difficultylevel == 3)
+            {
+                // GreenfootImage wallThree = new GreenfootImage("Door_Open3.png");
+                this.setImage(new GreenfootImage("Door_Open3.png"));
+            }
+            turfDifficulty = difficultylevel;
+        // }
+
+    }
+
     /**
      * Act - do whatever the DoorOpened wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,7 +50,7 @@ public class DoorOpened extends Turf
      */
     public void doorClose()
     {
-        DoorClosed door2 = new DoorClosed();
+        DoorClosed door2 = new DoorClosed(this.getDifficulty());
         if (timer == 0)
         {
             getWorld().addObject(door2, getX(), getY());

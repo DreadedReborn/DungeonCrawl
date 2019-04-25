@@ -34,9 +34,9 @@ public class StartWorld extends ActiveWorld
      */
     private void prepare()
     {
-        DoorOpened dooropened = new DoorOpened();
+        DoorOpened dooropened = new DoorOpened(1);
         addObject(dooropened,3,9);
-        DoorOpened dooropened2 = new DoorOpened();
+        DoorOpened dooropened2 = new DoorOpened(1);
         addObject(dooropened2,5,9);
         Logo logo = new Logo();
         addObject(logo,4,3);
@@ -44,11 +44,11 @@ public class StartWorld extends ActiveWorld
         addObject(buttonstart,4,7);
         ButtonHelp buttonhelp = new ButtonHelp();
         addObject(buttonhelp,4,9);
-        DoorClosed doorclosed = new DoorClosed();
+        DoorClosed doorclosed = new DoorClosed(1);
         addObject(doorclosed,5,7);
-        DoorClosed doorclosed2 = new DoorClosed();
+        DoorClosed doorclosed2 = new DoorClosed(1);
         addObject(doorclosed2,3,7);
-        Music music = new Music();
+        Music music = new Music(true);
         addObject(music, 1, 1);
     }
 }

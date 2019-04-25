@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * This class is abstract, thus it serves to host all the game's enemies as subclasses and provide methods through inheritance.
  * 
  * @author PC 
- * @version 0.7
+ * @version Shop Update
  */
 public abstract class Monster extends Mob
 {
@@ -37,8 +37,8 @@ public abstract class Monster extends Mob
     public void openDoor()
     {
         Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
-
-        DoorOpened door2 = new DoorOpened();
+        
+        DoorOpened door2 = new DoorOpened(door.getDifficulty());
         if (door != null)
         {
             getWorld().removeObject(door);
