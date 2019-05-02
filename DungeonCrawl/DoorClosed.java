@@ -22,17 +22,17 @@ public class DoorClosed extends Turf
             if (difficultylevel == 1)
             {
                 // GreenfootImage wallOne = new GreenfootImage("Door_Open.png");
-                this.setImage(new GreenfootImage("Door_Open.png"));
+                this.setImage(new GreenfootImage("Door.png"));
             }
             else if (difficultylevel == 2)
             {
                 // GreenfootImage wallTwo = new GreenfootImage("Door_Open2.png");
-                this.setImage(new GreenfootImage("Door_Open2.png"));
+                this.setImage(new GreenfootImage("Door2.png"));
             }
             else if (difficultylevel == 3)
             {
                 // GreenfootImage wallThree = new GreenfootImage("Door_Open3.png");
-                this.setImage(new GreenfootImage("Door_Open3.png"));
+                this.setImage(new GreenfootImage("Door3.png"));
             }
             turfDifficulty = difficultylevel;
         // }

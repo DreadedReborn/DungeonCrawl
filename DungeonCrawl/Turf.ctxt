@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.target=Turf
-comment0.text=\r\n\ Holds\ all\ "inanimate"\ classes\ that\ represent\ physical\ obstacles\ or\ tiles.\ \r\n\ \r\n\ @author\ PC\r\n\ @version\ empty\r\n
-numComments=1
+comment0.text=\r\n\ Holds\ all\ "inanimate"\ classes\ that\ represent\ physical\ obstacles\ or\ tiles.\ \r\n\ \r\n\ @author\ PC\r\n\ @version\ Shop\ Update\r\n
+comment1.params=
+comment1.target=int\ getDifficulty()
+numComments=2

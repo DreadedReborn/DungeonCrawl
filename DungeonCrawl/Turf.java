@@ -8,11 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Turf extends Actor
 {
-  public int turfDifficulty;
-  public int difficultylevel;
-  
-  public int getDifficulty()
-  {
-      return this.difficultylevel;
+    public int turfDifficulty;
+    public int difficultylevel;
+
+    public int getDifficulty()
+    {
+        return this.difficultylevel;
     }
+
 }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Monster
-comment0.text=\r\n\ This\ class\ is\ abstract,\ thus\ it\ serves\ to\ host\ all\ the\ game's\ enemies\ as\ subclasses\ and\ provide\ methods\ through\ inheritance.\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ 0.7\r\n
+comment0.text=\r\n\ This\ class\ is\ abstract,\ thus\ it\ serves\ to\ host\ all\ the\ game's\ enemies\ as\ subclasses\ and\ provide\ methods\ through\ inheritance.\r\n\ \r\n\ @author\ PC\ \r\n\ @version\ Shop\ Update\r\n
 comment1.params=
 comment1.target=void\ Skeleton()
 comment10.params=newDefense

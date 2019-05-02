@@ -106,7 +106,7 @@ public class Player extends Mob
         totalDefense = Defense + weaponDefense;
         waitForMove();
         //movement();
-        openDoor();
+        // openDoor();
         //setImage(gifImage.getCurrentImage());
 
     }     
@@ -179,6 +179,7 @@ public class Player extends Mob
         Actor collideOnce = getOneIntersectingObject(Gold.class);
         Actor nextFloor = getOneIntersectingObject(Stairs.class);
         Actor hotbar = getOneObjectAtOffset(0,1,EmptyHotbar.class);
+        Actor closedDoor = getOneObjectAtOffset(0,0,DoorClosed.class);
         /*
          * Enemy detection
          */
@@ -346,6 +347,11 @@ public class Player extends Mob
 
                 //}
             }
+        }
+
+        if (closedDoor != null)
+        {
+            openDoor();
         }
 
         if (keypressed.equals("m"))
@@ -521,11 +527,19 @@ public class Player extends Mob
      */
     public void openDoor()
     {
-        Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
+        int difficulty;
+        DoorClosed door = (DoorClosed)getOneObjectAtOffset(0, 0, DoorClosed.class);
+        if (door != null){
+            difficulty = door.getDifficulty();
+        }
+        else 
+        {
+            difficulty = 1;
+        }
 
-        DoorOpened door2 = new DoorOpened(door.getDifficulty());
         if (door != null)
         {
+            DoorOpened door2 = new DoorOpened(difficulty);
             getWorld().removeObject(door);
             getWorld().addObject(door2, getX(), getY());
             // Greenfoot.playSound("death2.mp3");

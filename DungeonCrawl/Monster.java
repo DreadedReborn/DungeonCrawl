@@ -36,9 +36,16 @@ public abstract class Monster extends Mob
      */
     public void openDoor()
     {
-        Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
-        
-        DoorOpened door2 = new DoorOpened(door.getDifficulty());
+        int difficulty;
+        DoorClosed door = (DoorClosed)getOneObjectAtOffset(0, 0, DoorClosed.class);
+        if (door != null){
+            difficulty = door.getDifficulty();
+        }
+        else 
+        {
+            difficulty = 1;
+        }
+        DoorOpened door2 = new DoorOpened(difficulty);
         if (door != null)
         {
             getWorld().removeObject(door);
@@ -166,6 +173,7 @@ public abstract class Monster extends Mob
         Actor rightCollide = getOneObjectAtOffset(1, 0, Wall.class);
         Actor upCollide = getOneObjectAtOffset(0, -1, Wall.class);
         Actor downCollide = getOneObjectAtOffset(0, 1, Wall.class);
+        Actor closedDoor = getOneObjectAtOffset(0,0,DoorClosed.class);
         /*
         Actor leftupCollide = getOneObjectAtOffset(-1, 1, Wall.class);
         Actor rightupCollide = getOneObjectAtOffset(1, 1, Wall.class);
@@ -265,6 +273,11 @@ public abstract class Monster extends Mob
                     }
                 }
             }
+        }
+        
+        if (closedDoor != null)
+        {
+            openDoor();
         }
     }
 
