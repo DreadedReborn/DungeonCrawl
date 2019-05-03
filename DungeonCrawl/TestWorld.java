@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Debug area to make stuff work.
  * 
  * @author PC
- * @version procedural-and-persistent
+ * @version Shop Update
  */
 public class TestWorld extends ActiveWorld
 {
@@ -33,6 +33,11 @@ public class TestWorld extends ActiveWorld
 
     private boolean bossSpawned = false;
 
+    private int turfDifficulty;
+
+    private boolean musicLastToggled;
+    
+    public int placeholderName;
     /*
 
     public TestWorld()
@@ -63,20 +68,15 @@ public class TestWorld extends ActiveWorld
         addObject(healthbar, 2 ,9);
         difficultybar = new Counter("Floor: "); 
         addObject(difficultybar, 4, 9);
+        Music music = new Music(musicLastToggled);
+        addObject(music, 1,1);
         if (!playerAlreadyhere){
             addObject(new MoveIndicator(), 6, 6);
         }
         prepare(progressiveDifficulty);
 
     }
-    
-    public void musicLooping()
-    {
-        if (!musicloop.isPlaying() )
-        {
-            musicloop.play();
-        }
-    }
+
     /*
     private void generateArrays()
     {   
@@ -96,6 +96,23 @@ public class TestWorld extends ActiveWorld
      */
     private void generateLevel(int progressiveDifficulty)
     {
+        
+        if (progressiveDifficulty <= 5){
+
+            placeholderName = 1;
+        }
+        if (progressiveDifficulty > 5){
+            if (progressiveDifficulty <=10){
+
+                placeholderName = 2;
+            }
+        }
+        if (progressiveDifficulty > 10){
+            if (progressiveDifficulty <= 16){
+
+                placeholderName = 3;
+            }
+        }
         z=0;
         x=0;
         y=0;
@@ -121,10 +138,11 @@ public class TestWorld extends ActiveWorld
                     if (getObjectsAt(x,y, DoorClosed.class).isEmpty()) { //Checks if there are no instances of doorclosed.class at the current X and Y values.
                         if (Greenfoot.getRandomNumber(100)<=10) //If a randomly-selected number is equal to, or smaller than, ten, execute below code.
                         {
-                            addObject(new Wall(), wallX[x], wallY[y]); //Adds a wall to current X and Y values.
+
+                            addObject(new Wall(placeholderName), wallX[x], wallY[y]); //Adds a wall to current X and Y values.
                         } else if (Greenfoot.getRandomNumber(100)<=10) //Otherwise, if randomly-selected number is equal to, or smaller than, ten, execute below code.
                         {
-                            addObject(new DoorClosed(), wallX[x], wallY[y]); //Adds a closed door to current X and Y values.
+                            addObject(new DoorClosed(placeholderName), wallX[x], wallY[y]); //Adds a closed door to current X and Y values.
                         }
                         else if (!stairsAdded){ //Otherwise, if the stairs have not been added yet, execute nested code.
                             if (Greenfoot.getRandomNumber(100)<=10){ //If randomly-selected number is equal to, or smaller than, ten, execute below code.
@@ -170,17 +188,30 @@ public class TestWorld extends ActiveWorld
      */
     public void createFloor(int progressiveDifficulty)
     {
-        addObject(new Floor(), wallX[x], wallY[y]);
-        if (progressiveDifficulty <= 10){
+
+        if (progressiveDifficulty <= 5){
+            addObject(new Floor(1), wallX[x], wallY[y]);
             newDifficulty1Floor(progressiveDifficulty);
+            turfDifficulty = 1;
         }
-        if (progressiveDifficulty > 10){
-            if (progressiveDifficulty <= 20){
+        if (progressiveDifficulty > 5){
+            if (progressiveDifficulty <=10){
+                addObject(new Floor(2), wallX[x], wallY[y]);
                 newDifficulty2Floor(progressiveDifficulty);
+                turfDifficulty = 2;
             }
         }
-        if (progressiveDifficulty > 20)
+        if (progressiveDifficulty > 10){
+            if (progressiveDifficulty <= 15){
+                addObject(new Floor(3), wallX[x], wallY[y]);
+                newDifficulty3Floor(progressiveDifficulty);
+                turfDifficulty = 3;
+            }
+        }
+        if (progressiveDifficulty > 15)
         {
+            addObject(new Floor(3), wallX[x], wallY[y]);
+            turfDifficulty = 3;
             FinalBossLevel();
         }
 
@@ -195,26 +226,26 @@ public class TestWorld extends ActiveWorld
         addObject(new Stairs(), x, y); //Adds a stairs turf to the provided X and Y values.
         //try{
         if (getObjectsAt(x - 1, y, Wall.class).size() != 0){removeObject(getObjectsAt(x - 1, y, Wall.class).get(0));
-            addObject(new Floor(), x - 1, y); }
+            addObject(new Floor(2), x - 1, y); }
         if (getObjectsAt(x , y - 1, Wall.class).size() != 0){removeObject(getObjectsAt(x , y - 1, Wall.class).get(0));
-            addObject(new Floor(), x , y - 1);}
+            addObject(new Floor(2), x , y - 1);}
         if (getObjectsAt(x + 1, y, Wall.class).size() != 0){removeObject(getObjectsAt(x + 1, y, Wall.class).get(0));
-            addObject(new Floor(), x + 1, y);}
+            addObject(new Floor(2), x + 1, y);}
         if (getObjectsAt(x, y + 1, Wall.class).size() != 0){removeObject(getObjectsAt(x, y + 1, Wall.class).get(0));
-            addObject(new Floor(), x, y + 1);}
+            addObject(new Floor(2), x, y + 1);}
         //} catch(Exception e){} 
 
     }
 
     /**
-     * Generates a level 1-10 floor.
+     * Generates a level 1-5 floor.
      * Called in construction of a level.
      * 
      * @param Difficulty, as integer.
      */
     private void newDifficulty1Floor(int progressiveDifficulty)
     {
-        if (Greenfoot.getRandomNumber(100)<20)
+        if (Greenfoot.getRandomNumber(200)<20)
         {
             addObject(new Gold(), wallX[x], wallY[y]);
         }
@@ -234,15 +265,48 @@ public class TestWorld extends ActiveWorld
         {
             addObject(new ArtifactChest(), wallX[x], wallY[y]);
         }
+        // turfDifficulty = 1;
     }
 
     /**
-     * Generates a level 11-20 floor.
+     * Generates a level 6-10 floor.
      * Called in construction of a level.
      * 
      * @param Difficulty, as integer.
      */
     private void newDifficulty2Floor(int progressiveDifficulty)
+    {
+        if (Greenfoot.getRandomNumber(100)<20)
+        {
+            addObject(new Gold(), wallX[x], wallY[y]);
+        }
+        else if (Greenfoot.getRandomNumber(100)<10)
+        {
+            addObject(new Skeleton(Greenfoot.getRandomNumber(5) + progressiveDifficulty,Greenfoot.getRandomNumber(3) + progressiveDifficulty,progressiveDifficulty), wallX[x], wallY[y]);
+        }
+        else if (Greenfoot.getRandomNumber(100)<10)
+        {
+            addObject(new BronzeChest(), wallX[x], wallY[y]);
+        }
+        else if (Greenfoot.getRandomNumber(10000)<80)
+        {
+            addObject(new ArtifactChest(), wallX[x], wallY[y]);
+        }
+
+        else if (Greenfoot.getRandomNumber(500)<10)
+        {
+            addObject(new SteelChest(), wallX[x], wallY[y]);
+        }
+        // turfDifficulty = 2;
+    }
+
+    /**
+     * Generates a level 11-15 floor.
+     * Called in construction of a level.
+     * 
+     * @param Difficulty, as integer.
+     */
+    private void newDifficulty3Floor(int progressiveDifficulty)
     {
         if (Greenfoot.getRandomNumber(100)<20)
         {
@@ -268,6 +332,7 @@ public class TestWorld extends ActiveWorld
         {
             addObject(new SteelChest(), wallX[x], wallY[y]);
         }
+
     }
 
     /**
@@ -313,7 +378,7 @@ public class TestWorld extends ActiveWorld
                 bossSpawned = true;
             }
         }
-
+        // turfDifficulty = 3;
         bossLevel = true;
     }
 
@@ -432,7 +497,15 @@ public class TestWorld extends ActiveWorld
                 getObjects(Lich.class).get(0).setTurnActive(true);
             }
         }
-        musicLooping();
+        //musicLooping();
+    }
+
+    /**
+     * Returns the difficulty number.
+     */
+    public int getDifficulty()
+    {
+        return turfDifficulty;
     }
 
     //public void act()

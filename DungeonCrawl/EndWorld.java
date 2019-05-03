@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EndWorld extends ActiveWorld
 {
-    
+
     /**
      * Constructor for objects of class EndWorld.
      * 
@@ -18,9 +18,16 @@ public class EndWorld extends ActiveWorld
         // Create a new world with 10x10 cells with a cell size of 50x50 pixels.
         super(9, 11, 50); 
         prepare();
-        musicloop.stop();
-        Greenfoot.playSound("win.mp3");
+        // //musicloop.stop();
+        // Greenfoot.playSound("win.mp3");
+        setPaintOrder(ButtonEnd.class, Wall.class);
     }
+    /*
+    public void act()
+    {
+    musicAct();
+    }
+     */
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -28,10 +35,14 @@ public class EndWorld extends ActiveWorld
     private void prepare()
     {
         winscreen winscreen = new winscreen();
-        addObject(winscreen,5,4);
-        winscreen.setLocation(4,4);
-        ButtonStart startbutton = new ButtonStart();
-        addObject(startbutton,5,7);
-        startbutton.setLocation(5,7);
+        addObject(winscreen,4,3);
+        ButtonEnd endbutton = new ButtonEnd();
+        addObject(endbutton,4,8);
+        Music music = new Music(true);
+        addObject(music,1,1);
+        Wall wall = new Wall(2);
+        addObject(wall,5,8);
+        Wall wall2 = new Wall(2);
+        addObject(wall2,3,8);
     }
 }

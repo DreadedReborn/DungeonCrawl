@@ -7,7 +7,7 @@ import java.util.*; //Imports java's utility library.
  * It is the primary method in which the player interacts with the world.
  * 
  * @author PC
- * @version 2
+ * @version Shop Update
  */
 public class Player extends Mob
 {
@@ -61,6 +61,9 @@ public class Player extends Mob
     private boolean rightEnemyTrue;
     private boolean upEnemyTrue;
     private boolean downEnemyTrue;
+    private boolean doorTrue;
+
+    //====================================================================================================
 
     public boolean isCursed = false;
     private boolean loadHealth = true;
@@ -91,8 +94,8 @@ public class Player extends Mob
             loadHealth = false;
             progressiveDifficulty = 2;
         }
-
     }
+
     /**
      * ActOnTurn -An adjustment of the Act method, this method is only called when the player engages a turn by any means.
      * This will normally be called by a method in a world class.
@@ -104,7 +107,7 @@ public class Player extends Mob
         totalDefense = Defense + weaponDefense;
         waitForMove();
         //movement();
-        openDoor();
+        // openDoor();
         //setImage(gifImage.getCurrentImage());
 
     }     
@@ -148,11 +151,12 @@ public class Player extends Mob
         setImage(gifImage.getCurrentImage());
         checkWin();
 
-        footstep.setVolume(70);
-        pickUp.setVolume(90);
-        pickUpGold.setVolume(30);
-        openChestSound.setVolume(80);
-        attack.setVolume(75);
+        footstep.setVolume(20);
+        pickUp.setVolume(80);
+        pickUpGold.setVolume(20);
+        openChestSound.setVolume(50);
+        attack.setVolume(50);
+        //musicAct();
     }
 
     /**
@@ -176,6 +180,7 @@ public class Player extends Mob
         Actor collideOnce = getOneIntersectingObject(Gold.class);
         Actor nextFloor = getOneIntersectingObject(Stairs.class);
         Actor hotbar = getOneObjectAtOffset(0,1,EmptyHotbar.class);
+        Actor closedDoor = getOneObjectAtOffset(0,0,DoorClosed.class);
         /*
          * Enemy detection
          */
@@ -186,6 +191,7 @@ public class Player extends Mob
         //Actor Skeleton = currentworld.getskeleton();
 
         //Checks for enemies, and adds booleans based on their existance.
+
         if (getOneObjectAtOffset(-1, 0, Monster.class) instanceof Monster)
         {
             leftEnemyTrue = true;
@@ -214,6 +220,13 @@ public class Player extends Mob
         else {
             downEnemyTrue = false;
         }
+        if ((DoorClosed)getOneIntersectingObject(DoorClosed.class) instanceof DoorClosed)
+        {
+            doorTrue = true;
+        }
+        else {
+            doorTrue = false;
+        }
         /*
          * Interactable Object Detection
          */
@@ -231,6 +244,11 @@ public class Player extends Mob
 
         //Actor Enemy = getNeighbours(1, false, Skeleton.class).get(0);
 
+        if (doorTrue)
+        {
+            openDoor();
+        }
+        
         if (leftCollide == null){ //trigger function
             if (leftEnemyTrue){
                 if (keypressed.equals("a")){
@@ -345,12 +363,53 @@ public class Player extends Mob
             }
         }
 
+        if (keypressed.equals("m"))
+        {
+            Music music = getWorld().getObjects(Music.class).get(0);
+            music.checkToggle();
+        }
+
         if (nextFloor != null){
             progressiveDifficulty++;
             newLevel(counter, currentworld, progressiveDifficulty);          
 
         }
     }
+    /*
+    /**
+     * Gives the player the control to toggle music on/off.
+     * Uses method toggleMusic.
+
+    public void musicAct()
+    {
+    String musicKeyPressed = Greenfoot.getKey();
+    if (musicKeyPressed == "m")
+    {
+    toggleMusic();
+    }
+    }
+     */
+    /*
+
+    /**
+     * Allows the music to be toggled on/off when called, based on boolean musicToggle.
+     * See method musicAct for use.
+    //
+    public void toggleMusic()
+    {
+    GreenfootSound musicloop = gameWorld.getCurrentMusic();
+    Boolean musicToggle = gameWorld.getMusicToggle();
+    if (musicToggle){
+    musicloop.playLoop();
+    musicToggle = false;
+    }
+    else {
+    musicloop.pause();
+    musicToggle = true;
+    }
+
+    }
+     */
 
     // The integer 'progressiveDifficulty' allows the game to continually become more difficult as the player progresses throughout the game.
     // This method (below) uses the integer to create a new level where the enemies are slightly stronger than the previous level.
@@ -366,6 +425,9 @@ public class Player extends Mob
         World nextLevel = new TestWorld(true, counter.getscore(), healthbar.getscore(), progressiveDifficulty);
         nextLevel.addObject(this, 4, 5);
         newLevelInventoryTransfer(nextLevel);
+        Music music = getWorld().getObjects(Music.class).get(0);
+        Music music2 = new Music(music.getToggle());
+        // music.getToggle();
         Greenfoot.setWorld(nextLevel);
     }
 
@@ -474,11 +536,19 @@ public class Player extends Mob
      */
     public void openDoor()
     {
-        Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
+        int difficulty;
+        DoorClosed door = (DoorClosed)getOneObjectAtOffset(0, 0, DoorClosed.class);
+        if (door != null){
+            difficulty = door.inheritDifficulty();
+        }
+        else 
+        {
+            difficulty = 1;
+        }
 
-        DoorOpened door2 = new DoorOpened();
         if (door != null)
         {
+            DoorOpened door2 = new DoorOpened(difficulty);
             getWorld().removeObject(door);
             getWorld().addObject(door2, getX(), getY());
             // Greenfoot.playSound("death2.mp3");

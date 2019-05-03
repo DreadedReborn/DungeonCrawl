@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * World that is displayed at the start of the game.
  * 
  * @author PC
- * @version  beginning of the end
+ * @version Shop Update
  */
 public class StartWorld extends ActiveWorld
 {    
@@ -20,12 +20,13 @@ public class StartWorld extends ActiveWorld
         super(9, 11, 50); 
 
         prepare();
-        setPaintOrder(ButtonHelp.class, ButtonStart.class, DoorClosed.class, DoorOpened.class);
+        setPaintOrder(ButtonHelp.class, ButtonStart.class, Wall.class);
         GreenfootSound musicloop = new GreenfootSound("crowdhammer.mp3");
-        musicloop.playLoop();
-        musicloop.setVolume(40);
+        //musicloop.playLoop();
+        //musicloop.setVolume(40);
     }
-
+    
+  
 
     /**
      * Prepare the world for the start of the program.
@@ -33,19 +34,21 @@ public class StartWorld extends ActiveWorld
      */
     private void prepare()
     {
-        DoorOpened dooropened = new DoorOpened();
-        addObject(dooropened,3,9);
-        DoorOpened dooropened2 = new DoorOpened();
-        addObject(dooropened2,5,9);
+        Wall wall = new Wall(1);
+        addObject(wall,3,9);
+        Wall wall2 = new Wall(1);
+        addObject(wall2,5,9);
         Logo logo = new Logo();
         addObject(logo,4,3);
         ButtonStart buttonstart = new ButtonStart();
         addObject(buttonstart,4,7);
         ButtonHelp buttonhelp = new ButtonHelp();
         addObject(buttonhelp,4,9);
-        DoorClosed doorclosed = new DoorClosed();
-        addObject(doorclosed,5,7);
-        DoorClosed doorclosed2 = new DoorClosed();
-        addObject(doorclosed2,3,7);
+        Wall wall3 = new Wall(1);
+        addObject(wall3,5,7);
+        Wall wall4 = new Wall(1);
+        addObject(wall4 ,3,7);
+        Music music = new Music(true);
+        addObject(music, 1, 1);
     }
 }

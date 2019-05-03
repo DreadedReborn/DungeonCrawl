@@ -1,4 +1,7 @@
 #BlueJ class context
 comment0.target=Stairs
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Stairs\ here.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 1.0\r\n
-numComments=1
+comment1.params=
+comment1.target=Stairs()
+comment1.text=\r\n\ Constructor\ has\ been\ commented\ out\ to\ prevent\ crashes.\r\n\ The\ different\ stairs\ sprites\ is\ unfinished.\r\n
+numComments=2

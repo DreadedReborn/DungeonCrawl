@@ -1,8 +1,12 @@
 #BlueJ class context
 comment0.target=DoorClosed
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DoorClosed\ here.\r\n\ \r\n\ @author\ PC\r\n\ @version\ 1.01\r\n
-comment1.params=
-comment1.target=void\ act()
+comment0.text=\r\n\ A\ closed\ door.\ Opens\ when\ a\ living\ creature\ intersects\ with\ it.\ Purely\ cosmetic.\r\n\ \r\n\ @author\ PC\r\n\ @version\ Shop\ Update\r\n
+comment1.params=difficultylevel
+comment1.target=DoorClosed(int)
 comment2.params=
-comment2.target=void\ animate()
-numComments=3
+comment2.target=int\ inheritDifficulty()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ animate()
+numComments=5

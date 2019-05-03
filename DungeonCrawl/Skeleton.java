@@ -93,7 +93,7 @@ public class Skeleton extends Monster
         }
         //waitformove(eAttack);
         movement(eAttack);
-        openDoor();
+        // openDoor();
         //spook();
         TurnActive = false;
     }    

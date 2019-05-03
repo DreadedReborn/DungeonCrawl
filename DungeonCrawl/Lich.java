@@ -60,7 +60,7 @@ public class Lich extends Monster
     public void ActOnTurn() 
     {
         movement(bossAttack);
-        openDoor();
+        // openDoor();
         summonSkeletons();
         TurnActive = false;
     }    

@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * This class is abstract, thus it serves to host all the game's enemies as subclasses and provide methods through inheritance.
  * 
  * @author PC 
- * @version 0.7
+ * @version Shop Update
  */
 public abstract class Monster extends Mob
 {
@@ -15,7 +15,7 @@ public abstract class Monster extends Mob
     public boolean takingDamage;
     public boolean isBoss;
 
-    public GreenfootSound footstep = new GreenfootSound("step.mp3");
+    //public GreenfootSound footstep = new GreenfootSound("step.mp3");
     //GreenfootSound pickUp =  new GreenfootSound("");
     //GreenfootSound Gold = new GreenfootSound(".mp4");
     //GreenfootSound openChest = new GreenfootSound("");
@@ -25,14 +25,27 @@ public abstract class Monster extends Mob
 
     private int health;
     private int defense;
+    public void Skeleton()
+    {
+        attack.setVolume(30);
+        hurt.setVolume(45);
+        die.setVolume(55);
+    }
     /**
      * Opens doors on the same tile as player.
      */
     public void openDoor()
     {
-        Actor door = getOneObjectAtOffset(0, 0, DoorClosed.class);
-
-        DoorOpened door2 = new DoorOpened();
+        int difficulty;
+        DoorClosed door = (DoorClosed)getOneObjectAtOffset(0, 0, DoorClosed.class);
+        if (door != null){
+            difficulty = door.getDifficulty();
+        }
+        else 
+        {
+            difficulty = 1;
+        }
+        DoorOpened door2 = new DoorOpened(difficulty);
         if (door != null)
         {
             getWorld().removeObject(door);
@@ -160,6 +173,7 @@ public abstract class Monster extends Mob
         Actor rightCollide = getOneObjectAtOffset(1, 0, Wall.class);
         Actor upCollide = getOneObjectAtOffset(0, -1, Wall.class);
         Actor downCollide = getOneObjectAtOffset(0, 1, Wall.class);
+        Actor closedDoor = getOneObjectAtOffset(0,0,DoorClosed.class);
         /*
         Actor leftupCollide = getOneObjectAtOffset(-1, 1, Wall.class);
         Actor rightupCollide = getOneObjectAtOffset(1, 1, Wall.class);
@@ -186,7 +200,7 @@ public abstract class Monster extends Mob
                         if (Greenfoot.getRandomNumber(100)<40) {//another trigger function
                             {
                                 setLocation(getX() - d, getY()); //event handler
-                                footstep.play();
+                                //footstep.play();
                                 HasMovedAlready = true;
                             }
                         } 
@@ -207,7 +221,7 @@ public abstract class Monster extends Mob
                     if (rightChest==null){
                         if(Greenfoot.getRandomNumber(100)<40) {
                             setLocation(getX() + d,getY());
-                            footstep.play();
+                            //footstep.play();
                             HasMovedAlready = true;
                         } 
                     }
@@ -227,7 +241,7 @@ public abstract class Monster extends Mob
                         if (downChest == null){
                             if (Greenfoot.getRandomNumber(100)<40) {
                                 setLocation(getX(),getY() + d);
-                                footstep.play();
+                                //footstep.play();
                                 HasMovedAlready = true;
                             } 
                         } 
@@ -247,7 +261,7 @@ public abstract class Monster extends Mob
                     if (upChest==null){
                         if(Greenfoot.getRandomNumber(100)<40) {
                             setLocation(getX(),getY() - d);
-                            footstep.play();
+                            //footstep.play();
                             HasMovedAlready = true;
                         }
                     }
@@ -259,6 +273,11 @@ public abstract class Monster extends Mob
                     }
                 }
             }
+        }
+        
+        if (closedDoor != null)
+        {
+            openDoor();
         }
     }
 
