@@ -13,7 +13,7 @@ public abstract class Turf extends Actor
 
     public int getDifficulty()
     {
-        return this.difficultylevel;
+          return this.turfDifficulty;
     }
 
 }

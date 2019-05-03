@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ButtonEnd
+comment0.text=\r\n\ Button\ that,\ when\ clicked,\ finishes\ the\ game.\ Replaces\ 'startbutton'\ on\ end\ screens.\r\n\ \r\n\ @author\ PC\r\n\ @version\ Shop\ Update\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ ButtonEnd\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ FinishGame()
+numComments=3

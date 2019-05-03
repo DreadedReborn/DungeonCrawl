@@ -20,7 +20,7 @@ public class StartWorld extends ActiveWorld
         super(9, 11, 50); 
 
         prepare();
-        setPaintOrder(ButtonHelp.class, ButtonStart.class, DoorClosed.class, DoorOpened.class);
+        setPaintOrder(ButtonHelp.class, ButtonStart.class, Wall.class);
         GreenfootSound musicloop = new GreenfootSound("crowdhammer.mp3");
         //musicloop.playLoop();
         //musicloop.setVolume(40);
@@ -34,20 +34,20 @@ public class StartWorld extends ActiveWorld
      */
     private void prepare()
     {
-        DoorOpened dooropened = new DoorOpened(1);
-        addObject(dooropened,3,9);
-        DoorOpened dooropened2 = new DoorOpened(1);
-        addObject(dooropened2,5,9);
+        Wall wall = new Wall(1);
+        addObject(wall,3,9);
+        Wall wall2 = new Wall(1);
+        addObject(wall2,5,9);
         Logo logo = new Logo();
         addObject(logo,4,3);
         ButtonStart buttonstart = new ButtonStart();
         addObject(buttonstart,4,7);
         ButtonHelp buttonhelp = new ButtonHelp();
         addObject(buttonhelp,4,9);
-        DoorClosed doorclosed = new DoorClosed(1);
-        addObject(doorclosed,5,7);
-        DoorClosed doorclosed2 = new DoorClosed(1);
-        addObject(doorclosed2,3,7);
+        Wall wall3 = new Wall(1);
+        addObject(wall3,5,7);
+        Wall wall4 = new Wall(1);
+        addObject(wall4 ,3,7);
         Music music = new Music(true);
         addObject(music, 1, 1);
     }

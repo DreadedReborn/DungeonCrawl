@@ -34,6 +34,11 @@ public class DoorOpened extends Turf
         // }
 
     }
+    
+    public int inheritDifficulty()
+    {
+        return this.turfDifficulty;
+    }
 
     /**
      * Act - do whatever the DoorOpened wants to do. This method is called whenever
@@ -43,14 +48,14 @@ public class DoorOpened extends Turf
     {
         doorClose();
     }    
-    int timeMax = 2000;
-    int timer = Greenfoot.getRandomNumber(timeMax);
+    // int timeMax = 2000;
+    int timer = 2000;
     /**
      * Automatically closes doors after a random amount of time.
      */
     public void doorClose()
     {
-        DoorClosed door2 = new DoorClosed(this.getDifficulty());
+        DoorClosed door2 = new DoorClosed(this.inheritDifficulty());
         if (timer == 0)
         {
             getWorld().addObject(door2, getX(), getY());

@@ -37,6 +37,11 @@ public class DoorClosed extends Turf
             turfDifficulty = difficultylevel;
         // }
     }
+    
+    public int inheritDifficulty()
+    {
+          return this.turfDifficulty;
+    }
 
     // private void assignSprites()
     // {

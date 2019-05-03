@@ -19,6 +19,7 @@ public class DeathWorld extends ActiveWorld
         prepare();
         // //musicloop.stop();
         // Greenfoot.playSound("lose.mp3");
+        setPaintOrder(ButtonEnd.class, Wall.class);
     }
     /*
     public void act()
@@ -35,10 +36,13 @@ public class DeathWorld extends ActiveWorld
     {
         notwinscreen notwinscreen = new notwinscreen();
         addObject(notwinscreen,4,3);
-        ButtonStart startbutton = new ButtonStart();
-        addObject(startbutton,4,8);
+        ButtonEnd endbutton = new ButtonEnd();
+        addObject(endbutton,4,8);
         Music music = new Music(true);
         addObject(music,1,1);
-
+        Wall wall = new Wall(2);
+        addObject(wall,5,8);
+        Wall wall2 = new Wall(2);
+        addObject(wall2,3,8);
     }
 }

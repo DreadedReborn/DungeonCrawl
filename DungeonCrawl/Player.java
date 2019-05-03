@@ -61,6 +61,7 @@ public class Player extends Mob
     private boolean rightEnemyTrue;
     private boolean upEnemyTrue;
     private boolean downEnemyTrue;
+    private boolean doorTrue;
 
     //====================================================================================================
 
@@ -190,6 +191,7 @@ public class Player extends Mob
         //Actor Skeleton = currentworld.getskeleton();
 
         //Checks for enemies, and adds booleans based on their existance.
+
         if (getOneObjectAtOffset(-1, 0, Monster.class) instanceof Monster)
         {
             leftEnemyTrue = true;
@@ -218,6 +220,13 @@ public class Player extends Mob
         else {
             downEnemyTrue = false;
         }
+        if ((DoorClosed)getOneIntersectingObject(DoorClosed.class) instanceof DoorClosed)
+        {
+            doorTrue = true;
+        }
+        else {
+            doorTrue = false;
+        }
         /*
          * Interactable Object Detection
          */
@@ -235,6 +244,11 @@ public class Player extends Mob
 
         //Actor Enemy = getNeighbours(1, false, Skeleton.class).get(0);
 
+        if (doorTrue)
+        {
+            openDoor();
+        }
+        
         if (leftCollide == null){ //trigger function
             if (leftEnemyTrue){
                 if (keypressed.equals("a")){
@@ -347,11 +361,6 @@ public class Player extends Mob
 
                 //}
             }
-        }
-
-        if (closedDoor != null)
-        {
-            openDoor();
         }
 
         if (keypressed.equals("m"))
@@ -530,7 +539,7 @@ public class Player extends Mob
         int difficulty;
         DoorClosed door = (DoorClosed)getOneObjectAtOffset(0, 0, DoorClosed.class);
         if (door != null){
-            difficulty = door.getDifficulty();
+            difficulty = door.inheritDifficulty();
         }
         else 
         {

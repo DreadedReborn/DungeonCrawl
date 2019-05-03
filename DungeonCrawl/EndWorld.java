@@ -20,6 +20,7 @@ public class EndWorld extends ActiveWorld
         prepare();
         // //musicloop.stop();
         // Greenfoot.playSound("win.mp3");
+        setPaintOrder(ButtonEnd.class, Wall.class);
     }
     /*
     public void act()
@@ -34,12 +35,14 @@ public class EndWorld extends ActiveWorld
     private void prepare()
     {
         winscreen winscreen = new winscreen();
-        addObject(winscreen,5,4);
-        winscreen.setLocation(4,4);
-        ButtonStart startbutton = new ButtonStart();
-        addObject(startbutton,5,7);
-        startbutton.setLocation(5,7);
+        addObject(winscreen,4,3);
+        ButtonEnd endbutton = new ButtonEnd();
+        addObject(endbutton,4,8);
         Music music = new Music(true);
         addObject(music,1,1);
+        Wall wall = new Wall(2);
+        addObject(wall,5,8);
+        Wall wall2 = new Wall(2);
+        addObject(wall2,3,8);
     }
 }
