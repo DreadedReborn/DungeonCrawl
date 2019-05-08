@@ -1,0 +1,199 @@
+	
+
+
+
+
+				Dungeon Crawl User Guide
+
+
+
+
+
+
+
+===================================================================================================
+				       Contents
+					
+				1) Story
+				2) Characters
+				3) Environment
+				4) Equipment
+				5) Progression
+
+
+
+
+===================================================================================================
+
+					Story
+	The original purpose of the Dungeon has been lost to time, as it's structure is no longer
+	static. The ever-shifting walls betray the dark energies that linger through the stone.
+	While their reasons are never the same, adventurers continue to funnel into the disguised
+	death trap that is the Dungeon.
+	After realizing the terror that could come from the accursed depths of the Dungeon, nearby
+	towns began to raise bounties for it's destruction, unaware of the true curse the Dungeon 
+	hosts. This led to the Dungeon growing in power and numbers in a drastic amount of time.
+	You, the Player, are one of these many adventurers, and while your reason is your own,
+	your goal is the same. 
+				   Destroy the dungeon.
+
+===================================================================================================
+
+					Characters
+
+		**The Player**
+		| HP: 50 | ATK: 2 | DEF: 2 |
+		The Player is the hero of Dungeon Crawl.
+
+		**Skeleton**
+		| HP: Variable | ATK: Variable | DEF: Variable |
+		The Skeletons are slaves of the Dungeon's master, the Lich.
+		They show no high-level intelligence, and seek the destruction of all who oppose
+		their master.
+
+		**The Master**
+		| HP: ?? | ATK: ?? | DEF: ?? |
+		The Dungeon's master is a mystery to all, as none who enter can speak
+		of it's true nature. It's rumored that the curse stems from this creature,
+		but others theorise they are a victim of a bigger threat.
+
+===================================================================================================
+
+					Environment
+		**Floor**
+		The Floor is a mundane piece of environment, as it has no special features.
+		It allows passage to any creature, and can contain loot.
+		The terrain contains a latent dark energy that becomes more 
+
+		**Wall**
+		The Wall blocks any movement of any creature that would intersect with it.
+		It will never contain loot.
+
+		**Door**
+		The Door is mechanically similar to the Floor, in that it has no mechanical purpose.
+		It will open when a creature walks into it.
+
+		**Gold**
+		The primary currency of the land, the Gold is the lifeblood of creatures in the Dungeon.
+		As a conductor of necromantic magics, Gold can be found in the systems of the undead,
+		similar to the blood in the living.
+		Upon death, undead powered by Gold will dissipate, leaving the coagulated solid Gold
+		that once ran through their veins.
+		The Player can collect Gold for score.
+
+		**Chest**
+		The primary means of storing loot collected from adventurers foolish enough to enter
+		the Dungeon, Chests contain useful items and equipment that the Player can obtain for
+		later use, such as armor and potions.
+
+		**Stairs**
+		The Stairs act as a means to traverse the many floors of the Dungeon for it's inhabitants.
+		For the Player, they serve as a direct route all the way down to the Dungeon's master.
+
+
+===================================================================================================
+
+					Equipment
+			=== Weapons ===
+			
+			**Dagger**
+			| ATK: 2 | DEF: 0 | 
+			The Dagger is standard-issue for those who enter the Dungeon.
+			Considered useless, the undead in the Dungeon constantly discard
+			these blades at the entrance, however they still hold a fraction of
+			the Dungeon's power, making them stronger than their regular counterparts.
+
+			**Sword**
+			| ATK: 5 | DEF: 0 |
+			The Sword is the next upgrade most adventurers seek in the Dungeon.
+			Charged with more energy than the Dagger due to how long it spends
+			in the Dungeon.
+
+			**Great Hammer**
+			| ATK: 8 | DEF: 0 |
+
+
+			**Great Axe**
+			| ATK: 10 | DEF: 0 |
+			The Great Axe is a well-refined weapon, and one of the realm's favorites.
+			Rarely, an adventurer spews forth from the dungeon, crazed and wielding
+			one of these blades, allowing them to circulate through the realm as relics.
+
+			**Bladestorm**
+			| ATK: ?? | DEF: 0 | CURSED |
+			A too-perfect confluence of workmanship and magic, the Bladestorm relic is
+			a weapon that not just a double-edged blade in metaphor. Known only in myths,
+			tales and rumor, the warning is always the same: The blade unlocks something
+			in humanity that should never be discovered.
+
+			**The Last Light's Hand**
+			| ATK: ?? | DEF: 0 |
+			Legends speak of a guild of Paladins, those trained in the art of prayer and blade.
+			These Paladins were commonly contracted in realms of high undead concentration,
+			to destroy the sources of evil that once corrupted the lands.
+			As the realm got safer, their numbers dwindled, their intake sputtered, and their
+			members retired, leaving the guild as a legend. However, myths circulated that their
+			equipment would never retired, forever pulsing with the power of forgotten Gods.
+
+			=== Armor ===
+
+			**Cloth Armor**
+			| ATK: 0 | DEF: 1 |
+			Your own simple clothes, left uncursed by the Dungeon's magic.
+			Surprisingly stain-resistant.
+
+			**Leather Armor**
+			| ATK: 0 | DEF: 2 |
+
+			**Bronze Armor**
+			| ATK: 0 | DEF: 2 |
+
+			**Iron Armor**
+			| ATK: 0 | DEF: 2 |
+
+			**Steel Armor**
+			| ATK: 0 | DEF: 2 |
+
+			**Ocean's Defense**
+			| ATK: 0 | DEF: ?? | CURSED |
+
+			**The Last Light's Guide**
+			| ATK: 0 | DEF: ?? |
+			It is common in the realm for snake oil merchants to contract blacksmiths to make
+			Paladin armor replicas to pawn them off as the real-deal, an actual relic, for
+			extreme amounts of money. Being made of weaker materials than proper armor,
+			it is common to find important soldiers and wealthy mercenaries dead in these
+			replicas, as the true art of Godsmithing is isolated to the crazed and fanatic alike.
+
+			=== Shields ===
+
+			**Empty Hand**
+			| ATK: 0 | DEF: 0 |
+
+			**Wooden Shield**
+			| ATK: 0 | DEF: 0 |
+
+			**Bronze Shield**
+			| ATK: 0 | DEF: 0 |
+
+			**Iron Shield**
+			| ATK: 0 | DEF: 0 |
+
+			**Steel Shield**
+			| ATK: 0 | DEF: 0 |
+
+			**The Last Light's Guard**
+			| ATK: 0 | DEF: ?? |
+			A certain legend details one mythical Paladin, a master of not only blade and prayer,
+			but also of defense, hints at the possibility that there was perhaps a higher echelon
+			of Paladins in the guild.
+
+===================================================================================================
+
+					Progression
+		To progress, the Player must complete their sole goal : Destroy the Dungeon.
+		To do this, they must find the sole creature responsible, who lies in the depths.
+		Slaughter the Dungeon master, and free the surrounding realms of the ironic curse.
+
+
+===================================================================================================
