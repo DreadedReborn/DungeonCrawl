@@ -97,27 +97,26 @@
 			=== Weapons ===
 			
 			**Dagger**
-			| ATK: 2 | DEF: 0 | 
+			| ATK: 6 | DEF: 0 | 
 			The Dagger is standard-issue for those who enter the Dungeon.
 			Considered useless, the undead in the Dungeon constantly discard
 			these blades at the entrance, however they still hold a fraction of
 			the Dungeon's power, making them stronger than their regular counterparts.
 
 			**Sword**
-			| ATK: 5 | DEF: 0 |
+			| ATK: 10 | DEF: 0 |
 			The Sword is the next upgrade most adventurers seek in the Dungeon.
 			Charged with more energy than the Dagger due to how long it spends
 			in the Dungeon.
 
-			**Great Hammer**
-			| ATK: 8 | DEF: 0 |
-
-
 			**Great Axe**
-			| ATK: 10 | DEF: 0 |
+			| ATK: 14 | DEF: 0 |
 			The Great Axe is a well-refined weapon, and one of the realm's favorites.
 			Rarely, an adventurer spews forth from the dungeon, crazed and wielding
 			one of these blades, allowing them to circulate through the realm as relics.
+
+			**Great Hammer**
+			| ATK: 18 | DEF: 0 |
 
 			**Bladestorm**
 			| ATK: ?? | DEF: 0 | CURSED |
@@ -143,16 +142,13 @@
 			Surprisingly stain-resistant.
 
 			**Leather Armor**
-			| ATK: 0 | DEF: 2 |
+			| ATK: 0 | DEF: 5 |
 
 			**Bronze Armor**
-			| ATK: 0 | DEF: 2 |
-
-			**Iron Armor**
-			| ATK: 0 | DEF: 2 |
+			| ATK: 0 | DEF: 9 |
 
 			**Steel Armor**
-			| ATK: 0 | DEF: 2 |
+			| ATK: 0 | DEF: 12 |
 
 			**Ocean's Defense**
 			| ATK: 0 | DEF: ?? | CURSED |
@@ -171,16 +167,13 @@
 			| ATK: 0 | DEF: 0 |
 
 			**Wooden Shield**
-			| ATK: 0 | DEF: 0 |
+			| ATK: 0 | DEF: 1 |
 
 			**Bronze Shield**
-			| ATK: 0 | DEF: 0 |
-
-			**Iron Shield**
-			| ATK: 0 | DEF: 0 |
+			| ATK: 0 | DEF: 3 |
 
 			**Steel Shield**
-			| ATK: 0 | DEF: 0 |
+			| ATK: 0 | DEF: 9 |
 
 			**The Last Light's Guard**
 			| ATK: 0 | DEF: ?? |
